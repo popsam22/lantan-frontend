@@ -8,6 +8,7 @@ import investment from "../assets/chart-squareinestments.png";
 import review from "../assets/Iconreview.png";
 import settings from "../assets/settingssettings.png";
 import avatar from "../assets/Avatarope.png";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -17,36 +18,47 @@ const Sidebar = () => {
           <img src={latana} alt="latana logo" width={40} height={40} />
         </div>
         <div className=" h-[338px]">
-          <div className="flex gap-4">
-            <img src={overview} alt="overview" width={24} height={24} />
-            <p className="text-xs">Overview</p>
+          <div className="flex gap-4 mb-4 items-center">
+            <img src={overview} alt="overview" width={20} height={20} />
+            <p className="text-xs text-[#7A7A7A]">Overview</p>
           </div>
-          <div className="flex gap-4">
-            <img src={property} alt="propertycustomer" width={24} height={24} />
-            <p className="text-xs">Property</p>
+          <div className="flex gap-4 mb-4 items-center">
+            <img src={property} alt="propertycustomer" width={20} height={20} />
+            <p className="text-xs text-[#7A7A7A]">Property</p>
           </div>
-          <div className="flex gap-4">
-            <img src={customer} alt="customer" width={24} height={24} />
-            <p className="text-xs">Customer</p>
+          <div className="flex gap-4 mb-4 items-center">
+            <img src={customer} alt="customer" width={20} height={20} />
+            <p className="text-xs text-[#7A7A7A]">Customer</p>
           </div>
-          <div className="flex gap-4">
-            <img src={payment} alt="payment" width={24} height={24} />
-            <p className="text-xs">Payments</p>
-          </div>
-          <div className="flex gap-4">
-            <img src={investment} alt="investment" width={24} height={24} />
-            <p className="font-inter text-xs">Investments</p>
-          </div>
-          <div className="flex gap-4">
-            <img src={review} alt="review" width={24} height={24} />
-            <p className="text-xs justify-center items-center">Review</p>
+          <Link to="/payments">
+            <div className="flex gap-4 mb-4 items-center">
+              <img src={payment} alt="payment" width={20} height={20} />
+              <p className="text-xs text-[#7A7A7A]">Payments</p>
+            </div>
+          </Link>
+          <Link to="/investments">
+            <div className="flex gap-4 mb-4 items-center">
+              <img src={investment} alt="investment" width={20} height={20} />
+              <p className="text-xs text-[#7A7A7A]">Investments</p>
+            </div>
+          </Link>
+          <div className="flex gap-4 mb-4 items-center w-full">
+            <img src={review} alt="review" width={20} height={20} />
+            <div className="flex justify-between items-center w-full">
+              <p className="text-xs text-[#7A7A7A] justify-center items-center">
+                Review
+              </p>
+              <p className="text-white bg-[#075AAA] p-1 rounded-full text-xs">
+                10
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <div className=" ">
-        <div className="flex gap-4 mb-5">
-          <img src={settings} alt="" />
-          <p className="text-xs">Settings</p>
+        <div className="flex gap-4 mb-5 items-center">
+          <img src={settings} alt="settings" width={20} height={20} />
+          <p className="text-xs text-[#7A7A7A]">Settings</p>
         </div>
         <div className="border w-[200px]"></div>
         <div className="flex w-[32px]">
