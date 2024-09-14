@@ -153,14 +153,17 @@ const Payments = () => {
               <div className="w-1/3"></div>
             </div>
             <div
-              className="flex items-center justify-end"
+              className="flex items-center justify-end "
               onClick={() =>
                 toast.success("Your File has been downloaded successfully")
               }
             >
               <Button
-                className="!border-2 !border-[#F0F2F4] !rounded-lg h-[38px]"
+                className="!border-2 !border-[#F0F2F4] !rounded-lg h-[38px] "
                 variant="outlined"
+                sx={{
+                  backgroundColor: "#F1F6FE",
+                }}
                 startIcon={
                   <img
                     src={cloud}
@@ -169,7 +172,7 @@ const Payments = () => {
                   />
                 }
               >
-                <p className="text-[#3D3D3D] px-2 py-2 capitalize">
+                <p className="text-[#206AB2] px-2 py-2 capitalize">
                   Export CSV
                 </p>
               </Button>
