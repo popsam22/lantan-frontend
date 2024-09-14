@@ -10,8 +10,8 @@ const RootLayout = () => {
           <Navbar />
           <div className="flex">
             <Sidebar />
-            <section className="flex h-[100vh] flex-1 items-center border rounded-3xl bg-[#E8E8E8]">
-              <div className="w-full border ">
+            <section className="flex flex-1 items-center border rounded-3xl bg-[#E8E8E8]">
+              <div className="w-full">
                 <Outlet />
               </div>
             </section>
