@@ -1,7 +1,8 @@
 import { DataGrid } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
+import { TableProps } from "../types";
 
-const Table = ({ rows, columns }) => {
+const Table = ({ rows, columns }: TableProps) => {
   return (
     <Paper sx={{ height: 600, width: "100%" }}>
       <DataGrid

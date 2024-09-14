@@ -12,11 +12,12 @@ import show from "../../assets/_Button baseshow.png";
 import { GridColDef } from "@mui/x-data-grid";
 import LatanaModal from "../../components/Modal";
 import { toast } from "react-toastify";
+import { SelectedItem } from "../../types";
 
 const Payments = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState<SelectedItem | null>(null);
 
   const columns: GridColDef[] = [
     {

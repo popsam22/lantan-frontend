@@ -1,7 +1,13 @@
 import Modal from "@mui/material/Modal";
 import Close from "../assets/close.png";
 
-const LatanaModal = ({ open, onClose, children, className, title }) => {
+const LatanaModal = ({
+  open,
+  onClose,
+  children,
+  className,
+  title,
+}: ModalProps) => {
   return (
     <Modal open={open} onClose={onClose}>
       <div

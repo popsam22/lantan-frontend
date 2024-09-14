@@ -1,8 +1,8 @@
+import { GridRenderCellParams } from "@mui/x-data-grid";
 import show from "../assets/_Button baseshow.png";
 import cloud from "../assets/download-cloud-linecloud.png";
-import { GridColDef } from "@mui/x-data-grid";
 
-export const investmentColumns: GridColDef[] = [
+export const investmentColumns = [
   {
     field: "dateCreated",
     headerName: "Date Created",
@@ -26,7 +26,7 @@ export const investmentColumns: GridColDef[] = [
   {
     field: "investmentType",
     headerName: "Investment Type",
-    renderCell: (prop) => (
+    renderCell: (prop: GridRenderCellParams) => (
       <button
         style={{
           backgroundColor: "#FAFCFF",
