@@ -153,6 +153,7 @@ const Payments = () => {
             </div>
           </div>
         }
+        className={""}
       />
       <div className="flex bg-white justify-between">
         <p className="text-[#1F1F1F] text-lg font-medium items-center justify-start mb-6">
