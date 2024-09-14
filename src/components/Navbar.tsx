@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div>
-      <nav className="flex relative top-0 w-full bg-white border-b py-4">
+      <nav className="flex relative top-0 w-full bg-white py-4">
         <div>
           <div className="flex mb-3 gap-2">
             <p className="text-[#A3A3A3]">Dashboard</p>

@@ -98,13 +98,16 @@ const Investments = () => {
               <p className="text-[#1F1F1F] capitalize">Type</p>
             </Button>
           </div>
-          <div className="flex py-2 px-2">
-            <img src={search} alt="search icon" />
+          <div className="relative flex h-[45px]">
+            <img
+              src={search}
+              alt="search icon"
+              className="absolute top-[13px] left-[15px]"
+            />
             <input
               type="text"
               placeholder="Search by amount, payment method..."
-              width={423}
-              height={42}
+              className="pl-12 w-[400px] bg-[#FBFBFB] placeholder:text-xs placeholder:font-extralight"
             />
           </div>
         </div>
