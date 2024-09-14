@@ -296,7 +296,7 @@ const Payments = () => {
           />
         </div>
       </div>
-      <Table rows={rows} columns={columns} />
+      <Table rows={rows} columns={columns} height={600} />
     </div>
   );
 };

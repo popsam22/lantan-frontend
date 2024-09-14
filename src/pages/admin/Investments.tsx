@@ -31,12 +31,13 @@ const Investments = () => {
         </Box>
       </div>
       <div>
-        <div className="flex bg-white justify-between">
+        <div className="flex bg-white justify-between mb-2">
           <p className="text-[#1F1F1F] text-lg font-medium items-center justify-start">
             Investment History
           </p>
           <Button
-            className="shadow-md"
+            className="!border-2 !border-[#F0F2F4] !rounded-lg h-[38px]"
+            variant="outlined"
             startIcon={
               <img
                 src={cloud}
@@ -112,7 +113,7 @@ const Investments = () => {
           </div>
         </div>
       </div>
-      <Table rows={investmentRow} columns={investmentColumns} />
+      <Table rows={investmentRow} columns={investmentColumns} height={250} />
     </div>
   );
 };

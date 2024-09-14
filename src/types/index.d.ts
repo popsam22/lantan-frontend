@@ -17,6 +17,7 @@ declare type ModalProps = {
 declare type TableProps = {
   rows: Object[];
   columns: GridColDef[];
+  height: number;
 };
 
 declare type SelectedItem = {
