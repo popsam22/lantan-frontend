@@ -9,8 +9,13 @@ import review from "../assets/Iconreview.png";
 import settings from "../assets/settingssettings.png";
 import avatar from "../assets/Avatarope.png";
 import { Link } from "react-router-dom";
+import { SidebarProp } from "../types";
 
-const Sidebar = () => {
+const Sidebar = ({ setItem }: SidebarProp) => {
+  const handleClick = (value: string) => {
+    setItem(value);
+  };
+
   return (
     <div>
       <div className="w-[200px] flex flex-col justify-between m-3 pb-5">
@@ -31,13 +36,19 @@ const Sidebar = () => {
             <p className="text-xs text-[#7A7A7A]">Customer</p>
           </div>
           <Link to="/payments">
-            <div className="flex gap-4 mb-4 items-center">
+            <div
+              className="flex gap-4 mb-4 items-center"
+              onClick={() => handleClick("Payments")}
+            >
               <img src={payment} alt="payment" width={20} height={20} />
               <p className="text-xs text-[#7A7A7A]">Payments</p>
             </div>
           </Link>
           <Link to="/investments">
-            <div className="flex gap-4 mb-4 items-center">
+            <div
+              className="flex gap-4 mb-4 items-center"
+              onClick={() => handleClick("Investments")}
+            >
               <img src={investment} alt="investment" width={20} height={20} />
               <p className="text-xs text-[#7A7A7A]">Investments</p>
             </div>

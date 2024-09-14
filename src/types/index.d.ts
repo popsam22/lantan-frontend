@@ -23,3 +23,11 @@ declare type TableProps = {
 declare type SelectedItem = {
   status: "Success" | "Failure";
 };
+
+declare type NavbarProp = {
+  item: string;
+};
+
+declare type SidebarProp = {
+  setItem: (value: string) => void;
+};
