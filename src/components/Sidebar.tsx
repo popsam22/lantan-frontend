@@ -67,12 +67,12 @@ const Sidebar = ({ setItem }: SidebarProp) => {
         </div>
       </div>
       <div className=" ">
-        <div className="flex gap-4 mb-5 items-center">
+        <div className="flex gap-4 mb-5 pl-2 items-center">
           <img src={settings} alt="settings" width={20} height={20} />
           <p className="text-xs text-[#7A7A7A]">Settings</p>
         </div>
         <div className="border w-[200px]"></div>
-        <div className="flex w-[32px]">
+        <div className="flex w-[32px] mt-3">
           <img src={avatar} alt="ope" className="object-contain pr-1" />
           <div className="flex flex-col ml-1">
             <p className="justify-center items-center text-xs">Owolu Opeyemi</p>
