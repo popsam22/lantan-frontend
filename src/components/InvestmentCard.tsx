@@ -2,6 +2,7 @@ import { Card, CardContent, Typography, Box } from "@mui/material";
 import profits from "../assets/_Changeprofit.png";
 import loss from "../assets/_Changeloss.png";
 import wallet from "../assets/walletwallet.png";
+import { CardProp } from "../types";
 
 const InvestmentCard = ({ title, amount, profit }: CardProp) => {
   return (

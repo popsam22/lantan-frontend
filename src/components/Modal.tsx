@@ -1,5 +1,6 @@
 import Modal from "@mui/material/Modal";
 import Close from "../assets/close.png";
+import { ModalProps } from "../types";
 
 const LatanaModal = ({
   open,
