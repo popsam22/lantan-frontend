@@ -217,8 +217,8 @@ const Payments = () => {
       <div className="flex mb-4 cursor-pointer w-fit">
         <p
           onClick={() => setActiveTab(0)}
-          className={`text-sm mr-4 text-[#5C5C5C]  cursor-pointer ${
-            activeTab === 0 && "text-[#075AAA] border-b-2 border-[#075AAA]"
+          className={`text-sm mr-4 text-[#075AAA]  cursor-pointer ${
+            activeTab === 0 && "border-b-2 border-[#075AAA]"
           }`}
         >
           All Payments
