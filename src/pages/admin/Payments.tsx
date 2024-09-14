@@ -101,25 +101,27 @@ const Payments = () => {
                 <p className="font-medium text-[18px]">75yuwet9r237112</p>
               </div>
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
+                <p className="text-xs text-[#7A7A7A]">Transaction ID</p>
                 <p className="font-medium text-[18px]">75yuwet9r237112</p>
               </div>
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
-                <p className="font-medium text-[18px]">75yuwet9r237112</p>
+                <p className="text-xs text-[#7A7A7A]">Customer</p>
+                <p className="font-medium text-[18px]">Owolu Opeyemi</p>
               </div>
             </div>
             <div className="flex justify-between gap-4 mb-8">
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
-                <p className="font-medium text-[18px]">75yuwet9r237112</p>
+                <p className="text-xs text-[#7A7A7A]">Amount Paid</p>
+                <p className="font-medium text-[18px]">N500,000.00</p>
               </div>
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
-                <p className="font-medium text-[18px]">75yuwet9r237112</p>
+                <p className="text-xs text-[#7A7A7A]">Description</p>
+                <p className="font-medium text-[18px]">
+                  Returns/March 31/Bradford
+                </p>
               </div>
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
+                <p className="text-xs text-[#7A7A7A]">Payment Status</p>
                 <p
                   className="font-medium text-[18px] text-center w-fit px-4 py-1 rounded-2xl"
                   style={{
@@ -139,17 +141,38 @@ const Payments = () => {
             </div>
             <div className="flex justify-between gap-4 mb-8">
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
-                <p className="font-medium text-[18px]">75yuwet9r237112</p>
+                <p className="text-xs text-[#7A7A7A]">Recipient Bank</p>
+                <p className="font-medium text-[18px]">Access Bank</p>
               </div>
               <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
-                <p className="font-medium text-[18px]">75yuwet9r237112</p>
+                <p className="text-xs text-[#7A7A7A]">
+                  Recipient Account Number
+                </p>
+                <p className="font-medium text-[18px]">09548765498</p>
               </div>
-              <div className="w-1/3">
-                <p className="text-xs text-[#7A7A7A]">Date Created</p>
-                <p className="font-medium text-[18px]">75yuwet9r237112</p>
-              </div>
+              <div className="w-1/3"></div>
+            </div>
+            <div
+              className="flex items-center justify-end"
+              onClick={() =>
+                toast.success("Your File has been downloaded successfully")
+              }
+            >
+              <Button
+                className="!border-2 !border-[#F0F2F4] !rounded-lg h-[38px]"
+                variant="outlined"
+                startIcon={
+                  <img
+                    src={cloud}
+                    alt="icon"
+                    style={{ width: "20px", height: "20px" }}
+                  />
+                }
+              >
+                <p className="text-[#3D3D3D] px-2 py-2 capitalize">
+                  Export CSV
+                </p>
+              </Button>
             </div>
           </div>
         }
