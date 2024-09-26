@@ -4,11 +4,13 @@ import Payments from "./pages/admin/Payments";
 import Investments from "./pages/admin/Investments";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
     <div>
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Navigate to="/payments" replace />} />
           <Route index path="/payments" element={<Payments />} />
