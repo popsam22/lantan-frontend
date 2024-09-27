@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/Login";
 import Register from "./pages/register/Register";
 import ForgotPassword from "./pages/register/ForgotPassword";
+import SetPassword from "./pages/register/SetPassword";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
+        <Route path="/set-password" element={<SetPassword />} />
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Navigate to="/payments" replace />} />
           <Route index path="/payments" element={<Payments />} />

@@ -8,8 +8,8 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <section>
-      <div className="flex justify-between flex-1 overflow-hidden h-screen">
-        <div className="flex flex-1 flex-col m-20 pl-5 justify-center">
+      <div className="flex justify-between flex-1 overflow-hidden h-screen bg-[#FCFCFD]">
+        <div className="flex flex-1 flex-col m-20 pl-5 justify-center w-full relative left-10">
           <div className="mb-16">
             <img
               src={Lantan}
@@ -89,7 +89,7 @@ const Login = () => {
           <img
             src={bg}
             alt="background image"
-            width={680}
+            width={672}
             height={900}
             className=""
           />
