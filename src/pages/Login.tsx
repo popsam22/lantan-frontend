@@ -2,8 +2,10 @@ import Lantan from "../assets/Lantan.svg";
 import email from "../assets/mail.png";
 import password from "../assets/password.png";
 import bg from "../assets/Frame 484.png";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <section>
       <div className="flex justify-between flex-1 overflow-hidden h-screen">
@@ -21,9 +23,12 @@ const Login = () => {
             <h1 className="text-2xl text-[#00142E] tracking-wider mb-2">
               Login to Dashboard
             </h1>
-            <p className="text-[#3D3D3D]">
+            <p className="text-[#3D3D3D] text-sm">
               Don't have an account?{" "}
-              <span className="text-[#075AAA] hover:cursor-pointer">
+              <span
+                className="text-[#075AAA] hover:cursor-pointer text-sm"
+                onClick={() => navigate("/register")}
+              >
                 Register
               </span>
             </p>
@@ -71,7 +76,10 @@ const Login = () => {
               </button>
             </div>
             <div className="flex items-center justify-center w-[342px]">
-              <span className="text-[#075AAA] hover:cursor-pointer">
+              <span
+                className="text-[#075AAA] hover:cursor-pointer"
+                onClick={() => navigate("/reset-password")}
+              >
                 Forgot Password?
               </span>
             </div>

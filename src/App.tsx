@@ -5,12 +5,16 @@ import Investments from "./pages/admin/Investments";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/Login";
+import Register from "./pages/register/Register";
+import ForgotPassword from "./pages/register/ForgotPassword";
 
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/reset-password" element={<ForgotPassword />} />
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Navigate to="/payments" replace />} />
           <Route index path="/payments" element={<Payments />} />
