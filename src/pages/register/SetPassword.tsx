@@ -34,7 +34,7 @@ const SetPassword = () => {
               >
                 Enter New Password
               </label>
-              <div className="flex border p-3 rounded-lg justify-between ">
+              <div className="flex border p-3 rounded-lg justify-between">
                 <input
                   type="text"
                   placeholder="enter your password"
