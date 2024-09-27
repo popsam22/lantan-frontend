@@ -26,31 +26,37 @@ const Register = () => {
               Create an account to allow you login
             </p>
           </div>
-          <div className="flex flex-col mb-8">
-            <label htmlFor="" className="text-sm text-[#344054] mb-2">
-              Email
-            </label>
-            <div className="flex items-center overflow-hidden w-full border p-3 rounded-lg max-w-[343px] mb-5">
-              <img
-                src={email}
-                alt="email"
-                width={20}
-                height={20}
-                className="mr-4"
-              />
-              <input
-                type="text"
-                placeholder="enter your email address"
-                className="flex flex-1 outline-none"
-              />
+          <div className="flex flex-col items-center bg-white w-full max-w-[450px] p-6 mb-10 rounded-3xl drop-shadow-sm">
+            <div className="flex flex-col mb-10 w-full">
+              <label
+                htmlFor="new-password"
+                className="text-sm text-[#3D3D3D] mb-2"
+              >
+                Email
+              </label>
+              <div className="flex border p-3 rounded-lg justify-between">
+                <img
+                  src={email}
+                  alt="email"
+                  width={24}
+                  height={24}
+                  className="hover:cursor-pointer"
+                />
+                <input
+                  type="text"
+                  placeholder="enter your email address"
+                  className="flex flex-1 outline-none ml-2"
+                />
+              </div>
+            </div>
+            <div className="flex w-full">
+              <button className="w-full text-white rounded-xl p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
+                Continue
+              </button>
             </div>
           </div>
-          <div className="flex mb-7">
-            <button className="w-[342px] text-white rounded-xl p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
-              Continue
-            </button>
-          </div>
-          <div className="flex justify-between w-full max-w-[350px]">
+
+          <div className="flex justify-between w-full max-w-[450px]">
             <p className="text-sm text-[#404040] text-center max-w-[176px]">
               Already Registered?
               <span
@@ -64,7 +70,7 @@ const Register = () => {
               className="text-sm text-[#404040] text-center hover:cursor-pointer hover:text-[#075AAA]"
               onClick={() => navigate("/reset-password")}
             >
-              Forgot Password
+              Forgot Password?
             </p>
           </div>
         </div>
