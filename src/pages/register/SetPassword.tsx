@@ -72,7 +72,10 @@ const SetPassword = () => {
               </div>
             </div>
             <div className="flex w-full">
-              <button className="w-full text-white rounded-xl p-4  bg-[#075AAA] hover:cursor-pointer">
+              <button
+                className="w-full text-white rounded-xl p-4  bg-[#075AAA] hover:cursor-pointer"
+                onClick={() => navigate("/success")}
+              >
                 Reset Password
               </button>
             </div>

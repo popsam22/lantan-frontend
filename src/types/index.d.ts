@@ -31,3 +31,21 @@ declare type NavbarProp = {
 declare type SidebarProp = {
   setItem: (value: string) => void;
 };
+
+declare type InputFieldProp = {
+  imageSrc: string;
+  label: string;
+  placeholder: string;
+  type: string;
+};
+
+declare type ButtonChildProp = {
+  children: string;
+};
+
+declare type ConfirmationPageProps = {
+  heading: string;
+  placeholder: string;
+  buttonText: string;
+  // navigateTo?: string;
+};

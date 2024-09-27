@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/register/Register";
 import ForgotPassword from "./pages/register/ForgotPassword";
 import SetPassword from "./pages/register/SetPassword";
+import Success from "./pages/register/Success";
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
         <Route path="/set-password" element={<SetPassword />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/welcome" element={<Success />} />
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Navigate to="/payments" replace />} />
           <Route index path="/payments" element={<Payments />} />
