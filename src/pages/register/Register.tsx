@@ -8,7 +8,7 @@ const Register = () => {
   return (
     <section>
       <div className="flex justify-between flex-1 overflow-hidden h-screen bg-[#FCFCFD]">
-        <div className="flex flex-1 flex-col m-20 pl-5 justify-center w-full relative left-10">
+        <div className="flex flex-1 flex-col m-20 pl-5 justify-center w-full relative lg:left-5">
           <div className="mb-16">
             <img
               src={Lantan}
@@ -38,8 +38,8 @@ const Register = () => {
                 <img
                   src={email}
                   alt="email"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   className="hover:cursor-pointer"
                 />
                 <input

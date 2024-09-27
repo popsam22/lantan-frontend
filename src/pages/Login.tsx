@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <section>
       <div className="flex justify-between flex-1 overflow-hidden h-screen bg-[#FCFCFD]">
-        <div className="flex flex-1 flex-col m-20 pl-5 justify-center w-full relative left-10">
+        <div className="flex flex-1 flex-col m-20 pl-5 justify-center w-full relative lg:left-5">
           <div className="mb-16">
             <img
               src={Lantan}
@@ -66,12 +66,12 @@ const Login = () => {
                   alt="password"
                   width={24}
                   height={24}
-                  className="hover:cursor-pointer"
+                  className="hover:cursor-pointer ml-2.5"
                 />
               </div>
             </div>
             <div className="flex">
-              <button className="w-[342px] text-white rounded-xl p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
+              <button className="w-[342px] text-white rounded-lg p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
                 Log in
               </button>
             </div>
