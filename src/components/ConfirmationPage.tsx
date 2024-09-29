@@ -51,7 +51,7 @@ const ConfirmationPage = ({
           <img
             src={bg}
             alt="background image"
-            width={672}
+            width={700}
             height={900}
             className=""
           />

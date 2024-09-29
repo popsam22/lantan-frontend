@@ -71,7 +71,10 @@ const Login = () => {
               </div>
             </div>
             <div className="flex">
-              <button className="w-[342px] text-white rounded-lg p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
+              <button
+                className="w-[342px] text-white rounded-lg p-4 mb-2 bg-[#075AAA] hover:cursor-pointer"
+                onClick={() => navigate("/admin/overview")}
+              >
                 Log in
               </button>
             </div>
@@ -89,7 +92,7 @@ const Login = () => {
           <img
             src={bg}
             alt="background image"
-            width={672}
+            width={700}
             height={900}
             className=""
           />

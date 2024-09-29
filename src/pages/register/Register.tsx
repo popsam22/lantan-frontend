@@ -50,7 +50,10 @@ const Register = () => {
               </div>
             </div>
             <div className="flex w-full">
-              <button className="w-full text-white rounded-xl p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
+              <button
+                className="w-full text-white rounded-xl p-4 mb-2 bg-[#075AAA] hover:cursor-pointer"
+                onClick={() => navigate("/biodata")}
+              >
                 Continue
               </button>
             </div>
@@ -78,7 +81,7 @@ const Register = () => {
           <img
             src={bg}
             alt="background image"
-            width={672}
+            width={700}
             height={900}
             className=""
           />

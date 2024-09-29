@@ -35,7 +35,7 @@ const Sidebar = ({ setItem }: SidebarProp) => {
             <img src={customer} alt="customer" width={20} height={20} />
             <p className="text-xs text-[#7A7A7A]">Customer</p>
           </div>
-          <Link to="/payments">
+          <Link to="/admin/payments">
             <div
               className="flex gap-4 mb-4 items-center"
               onClick={() => handleClick("Payments")}
@@ -44,7 +44,7 @@ const Sidebar = ({ setItem }: SidebarProp) => {
               <p className="text-xs text-[#7A7A7A]">Payments</p>
             </div>
           </Link>
-          <Link to="/investments">
+          <Link to="/admin/investments">
             <div
               className="flex gap-4 mb-4 items-center"
               onClick={() => handleClick("Investments")}
