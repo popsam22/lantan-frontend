@@ -65,13 +65,12 @@ const VerifyOTP = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="h-screen">
           <img
             src={bg}
             alt="background image"
             width={700}
-            height={900}
-            className=""
+            className="h-screen w-full object-cover"
           />
         </div>
       </div>

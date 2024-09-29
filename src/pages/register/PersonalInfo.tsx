@@ -93,8 +93,13 @@ const PersonalInfo = () => {
             </div>
           </div>
         </div>
-        <div>
-          <img src={bg} alt="background image" width={700} height={900} />
+        <div className="h-screen">
+          <img
+            src={bg}
+            alt="background image"
+            width={700}
+            className="h-screen w-full object-cover"
+          />
         </div>
       </div>
     </section>
