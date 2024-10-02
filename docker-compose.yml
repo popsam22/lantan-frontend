@@ -1,0 +1,13 @@
+version: '3.8'
+
+frontend:
+    build:
+      context: ./frontend  
+      dockerfile: Dockerfile 
+    image: lantan-frontend
+    ports:
+      - '3000:3000'  # Expose frontend on port 3000
+    environment:
+      API_URL: 'http://laravel.test'  # Use the service name of the backend to connect
+    networks:
+      - sail
