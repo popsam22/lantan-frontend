@@ -3,8 +3,15 @@ name: CI/CD Pipeline to EKS with Docker Hub
 on:
   push:
     branches:
-      - main        # Deploy to production on main branch
-      - staging     # Deploy to staging on staging branch
+      - main        
+      - staging 
+  pull_request:
+    branches:
+      - main
+      - staging  
+    paths-ignore:
+      - 'README.md'
+      - '.github/workflows/**'
 
 jobs:
   build-and-push:
@@ -12,22 +19,19 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKERHUB_USERNAME: your-dockerhub-username  # Set your DockerHub username
-      IMAGE_NAME: your-dockerhub-username/lantan-frontend # Replace with your DockerHub image name
+      DOCKERHUB_USERNAME: healerkay # Set your DockerHub username
+      IMAGE_NAME: healerkay/lantan-frontend # Replace with your DockerHub image name
       IMAGE_TAG: ${{ github.sha }} # Use commit SHA as the image tag
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}  # You must add your Docker Hub token as a GitHub secret
+          password: ${{ secrets.DOCKERHUB_PASSWORD}}  # You must add your Docker Hub token as a GitHub secret
 
       - name: Build and push Docker image
         run: |
@@ -41,32 +45,40 @@ jobs:
     if: github.ref == 'refs/heads/staging'
 
     env:
-      AWS_REGION: us-west-2   # Set your AWS region
-      CLUSTER_NAME: my-staging-cluster
-      DOCKER_IMAGE: your-dockerhub-username/lantan-frontend:${{ github.sha }}
+      AWS_REGION: us-east-1   # Set your AWS region
+      CLUSTER_NAME: my-cluster
+      DOCKER_IMAGE: Healerkay/lantan-frontend:${{ github.sha }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install kubectl
-        run: |
-          sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-          sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+      - name: "Install kubectl"
+        uses: azure/setup-kubectl@v3
+        with: 
+          version: "v1.19.3"
+        id: "install-kubectl"
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-region: ${{ env.AWS_REGION }}
+      - name: "Setup AWS Credentials"
+        uses: aws-actions/configure-aws-credentials@v4
+        with: 
+          aws-region: $AWS_REGION
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
 
       - name: Update kubeconfig for EKS
         run: |
           aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_REGION
 
+      - name: "Install Helm"
+        uses: azure/setup-helm@v4.2.0
+        id: "install-helm"
+  
       - name: Deploy to Staging
         run: |
-          kubectl set image deployment/frontend-deployment frontend-container=$DOCKER_IMAGE
-          kubectl rollout status deployment/frontend-deployment
+            helm upgrade --install lantan-front lantan-front/ -f lantan-front/values.yaml \
+            --set image.tag=${{ github.sha }} \
+            --set replicaCount=2
 
   deploy-to-eks-production:
     name: Deploy to EKS Production
@@ -75,29 +87,37 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     env:
-      AWS_REGION: us-west-2   # Set your AWS region
-      CLUSTER_NAME: my-production-cluster
-      DOCKER_IMAGE: your-dockerhub-username/lantan-frontend:${{ github.sha }}
+      AWS_REGION: us-east-1   # Set your AWS region
+      CLUSTER_NAME: my-cluster
+      DOCKER_IMAGE: Healerkay/lantan-frontend:${{ github.sha }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install kubectl
-        run: |
-          sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-          sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+      - name: "Install kubectl"
+        uses: azure/setup-kubectl@v3
+        with: 
+          version: "v1.19.3"
+        id: "install-kubectl"
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-region: ${{ env.AWS_REGION }}
+      - name: "Setup AWS Credentials"
+        uses: aws-actions/configure-aws-credentials@v4
+        with: 
+          aws-region: $AWS_REGION
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
 
       - name: Update kubeconfig for EKS
         run: |
           aws eks update-kubeconfig --name $CLUSTER_NAME --region $AWS_REGION
 
-      - name: Deploy to Production
+      - name: "Install Helm"
+        uses: azure/setup-helm@v4.2.0
+        id: "install-helm"
+  
+      - name: Deploy to production
         run: |
-          kubectl set image deployment/frontend-deployment frontend-container=$DOCKER_IMAGE
-          kubectl rollout status deployment/frontend-deployment
+            helm upgrade --install lantan-front lantan-front/ -f lantan-front/values.yaml \
+            --set image.tag=${{ github.sha }} \
+            --set replicaCount=2
