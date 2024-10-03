@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 1 # Adjust based on your scaling needs
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: frontend
@@ -16,12 +16,9 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: healerkay/lantan-frontend:1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 5173
-        env:
-        - name: NODE_ENV
-          value: "staging"
 ---
 apiVersion: v1
 kind: Service
