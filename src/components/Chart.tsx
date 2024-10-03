@@ -40,12 +40,15 @@ export const PieChart = () => {
 
   return (
     <div id="chart">
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="donut"
-        height={200}
-      />
+      {series.length > 0 && (
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="donut"
+          height={200}
+          // width={200}
+        />
+      )}
     </div>
   );
 };
@@ -134,12 +137,15 @@ export const LineChart = () => {
 
   return (
     <div id="chart">
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="area"
-        height={280}
-      />
+      {series.length > 0 && (
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="area"
+          height={280}
+          // width={280}
+        />
+      )}
     </div>
   );
 };

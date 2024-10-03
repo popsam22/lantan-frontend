@@ -23,18 +23,29 @@ const Sidebar = ({ setItem }: SidebarProp) => {
           <img src={latana} alt="latana logo" width={40} height={40} />
         </div>
         <div className=" h-[338px]">
-          <div className="flex gap-4 mb-4 items-center">
-            <img src={overview} alt="overview" width={20} height={20} />
-            <p className="text-xs text-[#7A7A7A]">Overview</p>
-          </div>
-          <div className="flex gap-4 mb-4 items-center">
-            <img src={property} alt="propertycustomer" width={20} height={20} />
-            <p className="text-xs text-[#7A7A7A]">Property</p>
-          </div>
-          <div className="flex gap-4 mb-4 items-center">
-            <img src={customer} alt="customer" width={20} height={20} />
-            <p className="text-xs text-[#7A7A7A]">Customer</p>
-          </div>
+          <Link to="/admin/overview" onClick={() => handleClick("Overview")}>
+            <div className="flex gap-4 mb-4 items-center">
+              <img src={overview} alt="overview" width={20} height={20} />
+              <p className="text-xs text-[#7A7A7A]">Overview</p>
+            </div>
+          </Link>
+          <Link to="/admin/property" onClick={() => handleClick("Property")}>
+            <div className="flex gap-4 mb-4 items-center">
+              <img
+                src={property}
+                alt="propertycustomer"
+                width={20}
+                height={20}
+              />
+              <p className="text-xs text-[#7A7A7A]">Property</p>
+            </div>
+          </Link>
+          <Link to="/admin/customers" onClick={() => handleClick("Customers")}>
+            <div className="flex gap-4 mb-4 items-center">
+              <img src={customer} alt="customer" width={20} height={20} />
+              <p className="text-xs text-[#7A7A7A]">Customer</p>
+            </div>
+          </Link>
           <Link to="/admin/payments">
             <div
               className="flex gap-4 mb-4 items-center"
