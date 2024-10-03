@@ -2,12 +2,27 @@ import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 export const PieChart = () => {
+  const series = [50, 30, 20]; //replace with data from endpoint from Emma
   const options: ApexOptions = {
     chart: {
       type: "donut",
+      width: "100%",
     },
     labels: ["Sold out", "Still Selling", "Co-ownership"],
     colors: ["#E5A000", "#009951", "#FFF1C2"],
+    legend: {
+      position: "top",
+      horizontalAlign: "center",
+      itemMargin: {
+        horizontal: 5,
+        vertical: 0,
+      },
+    },
+    dataLabels: { enabled: false },
+    markers: {
+      size: 0,
+      hover: { size: 5 },
+    },
     responsive: [
       {
         breakpoint: 480,
@@ -16,20 +31,21 @@ export const PieChart = () => {
             width: 300,
           },
           legend: {
-            position: "bottom",
+            position: "top",
           },
         },
       },
     ],
-    title: {
-      text: "Total Units",
-      align: "center",
-    },
   };
-  const series = [50, 30, 20]; //replace with data from endpoint
+
   return (
     <div id="chart">
-      <ReactApexChart options={options} series={series} type="donut" />
+      <ReactApexChart
+        options={options}
+        series={series}
+        type="donut"
+        height={200}
+      />
     </div>
   );
 };
@@ -82,20 +98,26 @@ export const LineChart = () => {
       gradient: {
         shadeIntensity: 1,
         opacityFrom: 0.7,
-        opacityTo: 0.1,
-        stops: [0, 100],
-        colorStops: [
-          {
-            offset: 0,
-            color: "#5E95DC",
-            opacity: 1,
-          },
-          {
-            offset: 95.55,
-            color: "rgba(1, 41, 92, 0)",
-            opacity: 0,
-          },
-        ],
+        opacityTo: 0.9,
+        stops: [0, 90, 100],
+
+        //config from figma is not really giving exact color
+        // shadeIntensity: 1,
+        // opacityFrom: 0.7,
+        // opacityTo: 0.1,
+        // stops: [0, 100],
+        // colorStops: [
+        //   {
+        //     offset: 0,
+        //     color: "#5E95DC",
+        //     opacity: 1,
+        //   },
+        //   {
+        //     offset: 95.55,
+        //     color: "rgba(1, 41, 92, 0)",
+        //     opacity: 0,
+        //   },
+        // ],
       },
     },
   };

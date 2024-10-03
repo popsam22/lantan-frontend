@@ -35,8 +35,14 @@ const Overview = () => {
         <div className="flex flex-col p-3 border bg-[#FCFCFD] rounded-lg w-full h-[290px]">
           <p className="text-sm text-[#3D3D3D] mb-2">Property Units</p>
           <div className="bg-white rounded-lg">
-            <div className="flex h-[240px] p-3 border rounded-lg">
-              <div>
+            <div className="flex h-[240px] p-3 border rounded-lg relative">
+              <div className="flex flex-col justify-center items-center absolute inset-0">
+                <h1 className="text-sm text-[#A3A3A3] font-medium">
+                  Total Units
+                </h1>
+                <p className="text-3xl text-[#3D3D3D] font-semibold">300</p>
+              </div>
+              <div className="flex justify-center items-center h-full w-full">
                 <PieChart />
               </div>
             </div>
@@ -64,7 +70,7 @@ const Overview = () => {
       </div>
       <div className="flex gap-4 p-1">
         <div className="flex flex-col p-2 border bg-[#FCFCFD] rounded-lg w-full">
-          <p className="text-sm text-[#3D3D3D] mb-2">Investment Analysis</p>
+          <p className="text-sm text-[#3D3D3D] mb-3">Investment Analysis</p>
           <div className="rounded-lg border bg-white p-1 w-full">
             <LineChart />
           </div>
@@ -72,8 +78,9 @@ const Overview = () => {
         <div className="flex flex-col p-2 border bg-[#FCFCFD] rounded-lg w-full max-w-[404px]">
           <p className="text-sm text-[#3D3D3D] mb-2">Top Investors</p>
           <div className="rounded-lg border bg-white p-1">
-            {investors.map(({ name, amount, title, slots, imgUrl }) => (
+            {investors.map(({ name, amount, title, slots, imgUrl, index }) => (
               <TopInvestors
+                key={index}
                 name={name}
                 amount={amount}
                 title={title}
