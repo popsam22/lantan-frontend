@@ -6,19 +6,17 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   const [selectedItem, setSelectedItem] = useState("Payments");
   return (
-    <div>
-      <main>
-        <section className="flex">
-          <Sidebar setItem={setSelectedItem} />
-          <div>
-            <Navbar item={selectedItem} />
-            <section className="flex flex-1 items-center border rounded-3xl bg-[#E8E8E8]">
-              <div className="w-full">
-                <Outlet />
-              </div>
-            </section>
-          </div>
-        </section>
+    <div className="min-h-screen flex flex-col">
+      <main className="flex flex-1">
+        <Sidebar setItem={setSelectedItem} />
+        <div className="flex flex-col flex-1">
+          <Navbar item={selectedItem} />
+          <section className="flex-1 rounded-3xl bg-[#E8E8E8] m-4">
+            <div className="w-full">
+              <Outlet />
+            </div>
+          </section>
+        </div>
       </main>
     </div>
   );
