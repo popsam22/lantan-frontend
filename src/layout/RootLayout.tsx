@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const RootLayout = () => {
-  const [selectedItem, setSelectedItem] = useState("Payments");
+  const [selectedItem, setSelectedItem] = useState("Overview");
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex flex-1">

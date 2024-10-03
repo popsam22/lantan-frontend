@@ -13,6 +13,7 @@ import PersonalInfo from "./pages/register/PersonalInfo";
 import VerifyOTP from "./pages/register/VerifyOTP";
 import Welcome from "./pages/register/Welcome";
 import Overview from "./pages/admin/Overview";
+import Property from "./pages/admin/Property";
 
 const App = () => {
   return (
@@ -28,8 +29,9 @@ const App = () => {
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/verify" element={<VerifyOTP />} />
         <Route path="/admin" element={<RootLayout />}>
-          <Route index path="payments" element={<Payments />} />
           <Route index path="overview" element={<Overview />} />
+          <Route path="property" element={<Property />} />
+          <Route path="payments" element={<Payments />} />
           <Route path="investments" element={<Investments />} />
         </Route>
       </Routes>
