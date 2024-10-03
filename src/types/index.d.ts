@@ -1,9 +1,10 @@
 import { GridColDef } from "@mui/x-data-grid";
 
 declare type CardProp = {
-  profit: boolean;
+  profit?: boolean;
   title: string;
   amount: string;
+  icon: string;
 };
 
 declare type ModalProps = {
@@ -48,4 +49,18 @@ declare type ConfirmationPageProps = {
   placeholder: string;
   buttonText: string;
   // navigateTo?: string;
+};
+
+declare type TaskCardProps = {
+  title: string;
+  subTitle: string;
+  button?: boolean;
+};
+
+declare type TopInvestorsProps = {
+  amount: string;
+  name: string;
+  title: string;
+  slots: string;
+  imgUrl: string;
 };
