@@ -1,13 +1,32 @@
-version: '3.8'
+# version: '3.9'  # Use a valid version
 
-frontend:
-    build:
-      context: ./frontend  
-      dockerfile: Dockerfile 
-    image: lantan-frontend
+# services:
+#   frontend:
+#     build:
+#       context: .  # Use the current directory for building
+#       dockerfile: Dockerfile  # Assuming you have a Dockerfile in the same folder
+#     image: healerkay/lantan-frontend:1
+#     ports:
+#       - '3000:3000'  # Expose frontend on port 5173
+#     environment:
+#       VITE_API_URL: 'http://backend:80'  # Point to backend service by name
+#     networks:
+#       - frontend-backend-net  # Define a network to connect to backend
+
+# networks:
+#   frontend-backend-net:
+#     external: true  # This assumes you will create this network externally
+
+version: '3'
+
+services:
+  app:
+    build: .
+    image: healerkay/lantan-frontend:1
     ports:
-      - '3000:3000'  # Expose frontend on port 3000
-    environment:
-      API_URL: 'http://laravel.test'  # Use the service name of the backend to connect
-    networks:
-      - sail
+      - "5174:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true

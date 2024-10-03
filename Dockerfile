@@ -1,29 +1,24 @@
-# Use an official node image as the base image
-FROM node:18 AS build
+# Use an official node image as a base
+FROM node:18-alpine
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy the package.json and package-lock.json into the container
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy the rest of the project files into the container
 COPY . .
 
-# Build the app for production
+# Build the Vite app
 RUN npm run build
 
-# Stage 2 - Use a lightweight web server like nginx to serve the frontend
-FROM nginx:alpine
+# Expose port 5173 for the Vite server
+EXPOSE 5173
 
-# Copy built files to nginx's HTML directory
-COPY --from=build /app/dist /usr/share/nginx/html
+# Command to start the Vite development server
+CMD ["npm", "run", "dev", "--", "--host"]
 
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
