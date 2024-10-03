@@ -4,7 +4,7 @@ declare type CardProp = {
   profit?: boolean;
   title: string;
   amount: string;
-  icon: string;
+  icon?: string;
 };
 
 declare type ModalProps = {
