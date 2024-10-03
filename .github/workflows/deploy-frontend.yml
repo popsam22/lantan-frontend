@@ -12,6 +12,7 @@ on:
     paths-ignore:
       - 'README.md'
       - '.github/workflows/**'
+      - 'Dockerfile'
 
 jobs:
   build-and-push:
