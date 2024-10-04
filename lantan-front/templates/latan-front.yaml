@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
       app: frontend
@@ -16,9 +16,17 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: healerkay/lantan-frontend:1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
-        - containerPort: 5173
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+
 
 ---        
 apiVersion: v1
@@ -28,14 +36,12 @@ metadata:
   labels:
     app: frontend
 spec:
-  type: LoadBalancer  # Corrected from 'N' to 'NodePort'
+  type: LoadBalancer # Corrected from 'N' to 'NodePort'
   ports:
     - protocol: TCP
       port: 80        # External port for service
-      targetPort: 5173 # Port on the container
+      targetPort: 80 # Port on the container
    # Optional: specify a NodePort, or let Kubernetes assign one automatically
   selector:
     app: frontend
 
-
-# "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
