@@ -37,10 +37,12 @@ declare type SidebarProp = {
 declare type InputProps = {
   label: string;
   placeholder: string;
+  bottomText?: string;
 };
 
 declare type CheckboxInputProps = {
   label: string;
+  onChange?: (selected: ChangeEventHandler<HTMLInputElement>) => void;
 };
 
 declare type ButtonProps = {

@@ -2,8 +2,20 @@ import Button from "../../components/Button";
 import CheckboxInput from "../../components/CheckboxInput";
 import ImageInput from "../../components/ImageInput";
 import TextInput from "../../components/TextInput";
+import { useState } from "react";
 
 const Property = () => {
+  const [unitSale, setUnitSale] = useState(false);
+  const [coownership, setcoownership] = useState(false);
+
+  const handleCheckBox = (selected: string) => {
+    if (selected === "Unit Sale") {
+      setUnitSale(!unitSale);
+    } else if (selected === "Co-ownership") {
+      setcoownership(!coownership);
+    }
+  };
+
   return (
     <div>
       <div className="p-3 overflow-auto bg-[#FCFCFD] border rounded-3xl">
@@ -105,7 +117,7 @@ const Property = () => {
                 <CheckboxInput label="Solar Power" />
               </div>
             </div>
-            <div className="h-[249px] rounded-lg border p-2 mb-3">
+            <div className="h-[267px] rounded-lg border p-2 mb-3">
               <h1 className="uppercase text-[#A3A3A3] text-sm font-light my-3">
                 Listing Type
               </h1>
@@ -113,12 +125,37 @@ const Property = () => {
                 Select all that applies to property
               </p>
               <div className="flex gap-6">
-                <CheckboxInput label="Unit Sale" />
-                <CheckboxInput label="Co-ownership" />
+                <CheckboxInput
+                  label="Unit Sale"
+                  onChange={() => handleCheckBox("Unit Sale")}
+                />
+                <CheckboxInput
+                  label="Co-ownership"
+                  onChange={() => handleCheckBox("Co-ownership")}
+                />
+              </div>
+              <div className="flex gap-3">
+                {unitSale && (
+                  <div className="border rounded-lg p-2 mt-2 w-1/2">
+                    <TextInput
+                      label="Enter number of Units Available"
+                      placeholder="Enter no of units"
+                      bottomText="This is the number of units available for sale"
+                    />
+                  </div>
+                )}
+                {coownership && (
+                  <div className="border rounded-lg p-2 mt-2 w-1/2">
+                    <TextInput
+                      label="Enter number of Slots Available"
+                      placeholder="Enter no of slots"
+                      bottomText="This is the number of slots investors can buy"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
-
           <div className="flex flex-1 flex-col">
             <div className="w-full h-[450px] rounded-xl border p-3 mb-3">
               <p className="uppercase text-[#A3A3A3] font-light mb-2">

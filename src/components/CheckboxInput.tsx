@@ -1,12 +1,13 @@
 import { CheckboxInputProps } from "../types";
 
-const CheckboxInput = ({ label }: CheckboxInputProps) => {
+const CheckboxInput = ({ label, onChange }: CheckboxInputProps) => {
   return (
     <div className="flex mb-2.5">
       <input
         type="checkbox"
         value={label}
         name={label}
+        onChange={onChange}
         className="mr-1 pr-2 "
       />
       <label
