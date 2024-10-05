@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKERHUB_USERNAME: healerkay # Set your DockerHub username
-      IMAGE_NAME: healerkay/lantan-frontend # Replace with your DockerHub image name
-      IMAGE_TAG: ${{ github.sha }} # Use commit SHA as the image tag
+      DOCKERHUB_USERNAME: healerkay 
+      IMAGE_NAME: healerkay/lantan-frontend 
+      IMAGE_TAG: ${{ github.sha }} 
 
     steps:
       - name: Checkout code
@@ -32,7 +32,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD}}  # You must add your Docker Hub token as a GitHub secret
+          password: ${{ secrets.DOCKERHUB_PASSWORD}}  
 
       - name: Build and push Docker image
         run: |
@@ -46,8 +46,8 @@ jobs:
     if: github.ref == 'refs/heads/staging'
 
     env:
-      AWS_REGION: us-east-1   # Set your AWS region
-      CLUSTER_NAME: my-cluster
+      AWS_REGION: us-east-1   
+      CLUSTER_NAME: mycluster
       DOCKER_IMAGE: Healerkay/lantan-frontend:${{ github.sha }}
 
     steps:
@@ -63,7 +63,7 @@ jobs:
       - name: "Setup AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v4
         with: 
-          aws-region: $AWS_REGION
+          aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
 
@@ -79,7 +79,7 @@ jobs:
         run: |
             helm upgrade --install lantan-front lantan-front/ -f lantan-front/values.yaml \
             --set image.tag=${{ github.sha }} \
-            --set replicaCount=2
+            --set replicaCount=3
 
   deploy-to-eks-production:
     name: Deploy to EKS Production
@@ -88,8 +88,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     env:
-      AWS_REGION: us-east-1   # Set your AWS region
-      CLUSTER_NAME: my-cluster
+      AWS_REGION: us-east-1  
+      CLUSTER_NAME: mycluster
       DOCKER_IMAGE: Healerkay/lantan-frontend:${{ github.sha }}
 
     steps:
@@ -121,4 +121,4 @@ jobs:
         run: |
             helm upgrade --install lantan-front lantan-front/ -f lantan-front/values.yaml \
             --set image.tag=${{ github.sha }} \
-            --set replicaCount=2
+            --set replicaCount=3
