@@ -31,6 +31,21 @@ declare type NavbarProp = {
 
 declare type SidebarProp = {
   setItem: (value: string) => void;
+  select: string;
+};
+
+declare type InputProps = {
+  label: string;
+  placeholder: string;
+};
+
+declare type CheckboxInputProps = {
+  label: string;
+};
+
+declare type ButtonProps = {
+  label: string;
+  bgColor?: boolean;
 };
 
 declare type InputFieldProp = {

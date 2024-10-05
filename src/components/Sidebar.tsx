@@ -8,10 +8,12 @@ import investment from "../assets/chart-squareinestments.png";
 import review from "../assets/Iconreview.png";
 import settings from "../assets/settingssettings.png";
 import avatar from "../assets/Avatarope.png";
+import actions from "../assets/Actions.png";
 import { Link } from "react-router-dom";
 import { SidebarProp } from "../types";
+import clsx from "clsx";
 
-const Sidebar = ({ setItem }: SidebarProp) => {
+const Sidebar = ({ setItem, select }: SidebarProp) => {
   const handleClick = (value: string) => {
     setItem(value);
   };
@@ -21,34 +23,60 @@ const Sidebar = ({ setItem }: SidebarProp) => {
       <div className="w-[200px] flex flex-col justify-between m-3 pb-5">
         <div className="px-3 pb-20">
           <img src={latana} alt="latana logo" width={40} height={40} />
+          {}
         </div>
         <div className=" h-[338px]">
           <Link to="/admin/overview" onClick={() => handleClick("Overview")}>
-            <div className="flex gap-4 mb-4 items-center">
+            <div
+              className={clsx(
+                "flex gap-4 mb-4 items-center p-2 rounded",
+                select === "Overview" && "bg-[#FAFCFF]"
+              )}
+            >
               <img src={overview} alt="overview" width={20} height={20} />
               <p className="text-xs text-[#7A7A7A]">Overview</p>
             </div>
           </Link>
           <Link to="/admin/property" onClick={() => handleClick("Property")}>
-            <div className="flex gap-4 mb-4 items-center">
+            <div
+              className={clsx(
+                "flex gap-4 mb-4 items-center p-2 rounded",
+                select === "Property" && "bg-[#FAFCFF]"
+              )}
+            >
               <img
                 src={property}
                 alt="propertycustomer"
                 width={20}
                 height={20}
               />
-              <p className="text-xs text-[#7A7A7A]">Property</p>
+              <div className="flex items-center w-full justify-between">
+                <p className="text-xs text-[#7A7A7A]">Property</p>
+                <img src={actions} alt="arrow-down" width={20} height={20} />
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 w-full pl-9 py-2">
+              <p className="text-xs text-[#7A7A7A] mb-2">Add Property</p>
+              <p className="text-xs text-[#7A7A7A] mb-4">Properties</p>
             </div>
           </Link>
           <Link to="/admin/customers" onClick={() => handleClick("Customers")}>
-            <div className="flex gap-4 mb-4 items-center">
+            <div
+              className={clsx(
+                "flex gap-4 mb-4 items-center p-2 rounded",
+                select === "Customers" && "bg-[#FAFCFF]"
+              )}
+            >
               <img src={customer} alt="customer" width={20} height={20} />
               <p className="text-xs text-[#7A7A7A]">Customer</p>
             </div>
           </Link>
           <Link to="/admin/payments">
             <div
-              className="flex gap-4 mb-4 items-center"
+              className={clsx(
+                "flex gap-4 mb-4 items-center p-2 rounded",
+                select === "Payments" && "bg-[#FAFCFF]"
+              )}
               onClick={() => handleClick("Payments")}
             >
               <img src={payment} alt="payment" width={20} height={20} />
@@ -57,7 +85,10 @@ const Sidebar = ({ setItem }: SidebarProp) => {
           </Link>
           <Link to="/admin/investments">
             <div
-              className="flex gap-4 mb-4 items-center"
+              className={clsx(
+                "flex gap-4 mb-4 items-center p-2 rounded",
+                select === "Investments" && "bg-[#FAFCFF]"
+              )}
               onClick={() => handleClick("Investments")}
             >
               <img src={investment} alt="investment" width={20} height={20} />
@@ -86,12 +117,14 @@ const Sidebar = ({ setItem }: SidebarProp) => {
         <div className="flex w-[32px] mt-3">
           <img src={avatar} alt="ope" className="object-contain pr-1" />
           <div className="flex flex-col ml-1">
-            <p className="justify-center items-center text-xs">Owolu Opeyemi</p>
-            <p className="justify-center items-center text-xs">
+            <p className="justify-center items-center text-xs text-[#344054]">
+              Owolu Opeyemi
+            </p>
+            <p className="justify-center items-center text-xs text-[#7A7A7A]">
               admin@peaktower.com
             </p>
           </div>
-          <img src={logout} alt="logout" className="flex top-1 right-2" />
+          <img src={logout} alt="logout" className="flex top-1 right-1" />
         </div>
       </div>
     </div>

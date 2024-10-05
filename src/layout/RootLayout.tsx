@@ -8,7 +8,7 @@ const RootLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex flex-1">
-        <Sidebar setItem={setSelectedItem} />
+        <Sidebar setItem={setSelectedItem} select={selectedItem} />
         <div className="flex flex-col flex-1">
           <Navbar item={selectedItem} />
           <section className="flex-1 rounded-3xl bg-[#E8E8E8] m-4">
