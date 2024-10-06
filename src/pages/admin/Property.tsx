@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import CheckboxInput from "../../components/CheckboxInput";
+import FileInput from "../../components/FileInput";
 import ImageInput from "../../components/ImageInput";
 import TextInput from "../../components/TextInput";
 import { useState } from "react";
@@ -157,12 +158,18 @@ const Property = () => {
             </div>
           </div>
           <div className="flex flex-1 flex-col">
-            <div className="w-full h-[450px] rounded-xl border p-3 mb-3">
-              <p className="uppercase text-[#A3A3A3] font-light mb-2">
+            <div className="w-full h-[456px] rounded-xl border p-2 mb-3 ">
+              <p className="uppercase text-[#A3A3A3] text-sm font-light mb-3 p-2">
                 Property Image (At least 5 images)
               </p>
-              <div className="border-red-500">
-                <ImageInput />
+              <div>
+                <ImageInput full={true} />
+                <div className="grid grid-cols-2">
+                  <ImageInput />
+                  <ImageInput />
+                  <ImageInput />
+                  <ImageInput />
+                </div>
               </div>
             </div>
             <div className="h-[503px] border rounded-lg p-3">
@@ -174,20 +181,14 @@ const Property = () => {
                   label="Document Title"
                   placeholder="Enter document title here"
                 />
-                <TextInput
-                  label="Upload Document"
-                  placeholder="Click here to upload file"
-                />
+                <FileInput label="Upload Document" />
               </div>
               <div className="h-[187px] w-full border rounded-lg p-2">
                 <TextInput
                   label="Document Title"
                   placeholder="Enter document title here"
                 />
-                <TextInput
-                  label="Upload Document"
-                  placeholder="Click here to upload file"
-                />
+                <FileInput label="Upload Document" />
               </div>
               <div className="mt-7 flex justify-end">
                 <Button label="Add more document" bgColor={true} />

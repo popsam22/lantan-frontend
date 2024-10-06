@@ -50,6 +50,10 @@ declare type ButtonProps = {
   bgColor?: boolean;
 };
 
+declare type ImageProp = {
+  full?: boolean;
+};
+
 declare type InputFieldProp = {
   imageSrc: string;
   label: string;
