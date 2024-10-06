@@ -36,7 +36,7 @@ declare type SidebarProp = {
 
 declare type InputProps = {
   label: string;
-  placeholder: string;
+  placeholder?: string;
   bottomText?: string;
 };
 
