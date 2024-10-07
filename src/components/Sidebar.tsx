@@ -22,10 +22,15 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
     <div>
       <div className="w-[200px] flex flex-col justify-between m-3 pb-5">
         <div className="px-3 pb-20">
-          <img src={latana} alt="latana logo" width={40} height={40} />
-          {}
+          <img
+            src={latana}
+            alt="latana logo"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
         </div>
-        <div className=" h-[338px]">
+        <div className=" h-[540px]">
           <Link to="/admin/overview" onClick={() => handleClick("Overview")}>
             <div
               className={clsx(
@@ -37,29 +42,33 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
               <p className="text-xs text-[#7A7A7A]">Overview</p>
             </div>
           </Link>
-          <Link to="/admin/property" onClick={() => handleClick("Property")}>
-            <div
-              className={clsx(
-                "flex gap-4 mb-4 items-center p-2 rounded",
-                select === "Property" && "bg-[#FAFCFF]"
-              )}
+
+          <div
+            className={clsx(
+              "flex gap-4 mb-4 items-center p-2 rounded",
+              select === "Property" && "bg-[#FAFCFF]"
+            )}
+          >
+            <img src={property} alt="propertycustomer" width={20} height={20} />
+            <div className="flex items-center w-full justify-between">
+              <p className="text-xs text-[#7A7A7A]">Property</p>
+              <img src={actions} alt="arrow-down" width={20} height={20} />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 w-full pl-9 py-2">
+            <Link
+              to="/admin/property/add-property"
+              onClick={() => handleClick("Property")}
             >
-              <img
-                src={property}
-                alt="propertycustomer"
-                width={20}
-                height={20}
-              />
-              <div className="flex items-center w-full justify-between">
-                <p className="text-xs text-[#7A7A7A]">Property</p>
-                <img src={actions} alt="arrow-down" width={20} height={20} />
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 w-full pl-9 py-2">
               <p className="text-xs text-[#7A7A7A] mb-2">Add Property</p>
+            </Link>
+            <Link
+              to="/admin/property/properties"
+              onClick={() => handleClick("Property")}
+            >
               <p className="text-xs text-[#7A7A7A] mb-4">Properties</p>
-            </div>
-          </Link>
+            </Link>
+          </div>
           <Link to="/admin/customers" onClick={() => handleClick("Customers")}>
             <div
               className={clsx(

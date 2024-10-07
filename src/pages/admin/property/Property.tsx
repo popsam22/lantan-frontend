@@ -1,13 +1,18 @@
-import Button from "../../components/Button";
-import CheckboxInput from "../../components/CheckboxInput";
-import FileInput from "../../components/FileInput";
-import ImageInput from "../../components/ImageInput";
-import TextInput from "../../components/TextInput";
+import Button from "../../../components/Button";
+import CheckboxInput from "../../../components/CheckboxInput";
+import FileInput from "../../../components/FileInput";
+import ImageInput from "../../../components/ImageInput";
+import TextInput from "../../../components/TextInput";
 import { useState } from "react";
+import LatanaModal from "../../../components/Modal";
+import success from "../../../assets/Featured icon.png";
+import { useNavigate } from "react-router-dom";
 
 const Property = () => {
   const [unitSale, setUnitSale] = useState(false);
   const [coownership, setcoownership] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleCheckBox = (selected: string) => {
     if (selected === "Unit Sale") {
@@ -20,12 +25,46 @@ const Property = () => {
   return (
     <div>
       <div className="p-3 overflow-auto bg-[#FCFCFD] border rounded-3xl">
+        <LatanaModal
+          title={""}
+          open={isOpen}
+          onClose={() => {
+            setIsOpen(false);
+          }}
+          children={
+            <div className="flex flex-col items-center justify-center">
+              <img
+                src={success}
+                alt="success"
+                width={120}
+                height={120}
+                className="m-2"
+              />
+              <h1 className="text-[#1F1F1F] text-2xl font-medium whitespace-nowrap mb-1">
+                Property Added Successfully
+              </h1>
+              <p className="text-[#7A7A7A] font-light whitespace-nowrap text-sm mb-4">
+                Bradford Apartment has been successfully added
+              </p>
+              <button
+                onClick={() => navigate("/admin/property/properties")}
+                className="w-[300px] h-[54px] text-[#206AB2] font-semibold text-sm rounded-lg p-4 mb-2 bg-[#F1F6FE] hover:cursor-pointer"
+              >
+                View Property
+              </button>
+            </div>
+          }
+          className={"max-w-[526px]"}
+        />
         <div className="flex items-center justify-between border-b-2 ">
           <p className="text-[#2E2E2E] text-2xl tracking-wide">
             Fill the Information below to Add New Property
           </p>
           <div className="flex justify-between gap-4">
-            <button className="w-[158px] text-white font-semibold text-sm rounded-lg p-4 mb-2 bg-[#075AAA] hover:cursor-pointer">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="w-[158px] text-white font-semibold text-sm rounded-lg p-4 mb-2 bg-[#075AAA] hover:cursor-pointer"
+            >
               Add Property
             </button>
             <button className="w-[158px] text-[#206AB2] font-semibold text-sm rounded-lg p-4 mb-2 bg-[#F1F6FE] hover:cursor-pointer">
