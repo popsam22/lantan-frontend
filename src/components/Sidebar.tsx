@@ -30,29 +30,41 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
             className="object-contain"
           />
         </div>
-        <div className=" h-[540px]">
+        <div className="h-[540px]">
           <Link to="/admin/overview" onClick={() => handleClick("Overview")}>
             <div
               className={clsx(
-                "flex gap-4 mb-4 items-center p-2 rounded",
+                "flex gap-4 mb-2 items-center p-2 rounded",
                 select === "Overview" && "bg-[#FAFCFF]"
               )}
             >
-              <img src={overview} alt="overview" width={20} height={20} />
+              <img
+                src={overview}
+                alt="overview"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
               <p className="text-xs text-[#7A7A7A]">Overview</p>
             </div>
           </Link>
 
           <div
             className={clsx(
-              "flex gap-4 mb-4 items-center p-2 rounded",
+              "flex gap-4 mb-2 items-center p-2 rounded",
               select === "Property" && "bg-[#FAFCFF]"
             )}
           >
             <img src={property} alt="propertycustomer" width={20} height={20} />
             <div className="flex items-center w-full justify-between">
               <p className="text-xs text-[#7A7A7A]">Property</p>
-              <img src={actions} alt="arrow-down" width={20} height={20} />
+              <img
+                src={actions}
+                alt="arrow-down"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
             </div>
           </div>
           <div className="flex flex-col gap-4 w-full pl-9 py-2">
@@ -72,40 +84,64 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
           <Link to="/admin/customers" onClick={() => handleClick("Customers")}>
             <div
               className={clsx(
-                "flex gap-4 mb-4 items-center p-2 rounded",
+                "flex gap-4 mb-2 items-center p-2 rounded",
                 select === "Customers" && "bg-[#FAFCFF]"
               )}
             >
-              <img src={customer} alt="customer" width={20} height={20} />
-              <p className="text-xs text-[#7A7A7A]">Customer</p>
+              <img
+                src={customer}
+                alt="customer"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
+              <p className="text-xs text-[#7A7A7A]">Customers</p>
             </div>
           </Link>
           <Link to="/admin/payments">
             <div
               className={clsx(
-                "flex gap-4 mb-4 items-center p-2 rounded",
+                "flex gap-4 mb-2 items-center p-2 rounded",
                 select === "Payments" && "bg-[#FAFCFF]"
               )}
               onClick={() => handleClick("Payments")}
             >
-              <img src={payment} alt="payment" width={20} height={20} />
+              <img
+                src={payment}
+                alt="payment"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
               <p className="text-xs text-[#7A7A7A]">Payments</p>
             </div>
           </Link>
           <Link to="/admin/investments">
             <div
               className={clsx(
-                "flex gap-4 mb-4 items-center p-2 rounded",
+                "flex gap-4 mb-2 items-center p-2 rounded",
                 select === "Investments" && "bg-[#FAFCFF]"
               )}
               onClick={() => handleClick("Investments")}
             >
-              <img src={investment} alt="investment" width={20} height={20} />
+              <img
+                src={investment}
+                alt="investment"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
               <p className="text-xs text-[#7A7A7A]">Investments</p>
             </div>
           </Link>
-          <div className="flex gap-4 mb-4 items-center w-full">
-            <img src={review} alt="review" width={20} height={20} />
+          <div className="flex gap-4 mb-2 items-center p-2 rounded">
+            <img
+              src={review}
+              alt="review"
+              width={20}
+              height={20}
+              className="object-contain"
+            />
             <div className="flex justify-between items-center w-full">
               <p className="text-xs text-[#7A7A7A] justify-center items-center">
                 Review
@@ -117,15 +153,15 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
           </div>
         </div>
       </div>
-      <div className=" ">
-        <div className="flex gap-4 mb-5 pl-2 items-center">
+      <div className="px-3">
+        <div className="flex gap-4 pl-2 items-center">
           <img src={settings} alt="settings" width={20} height={20} />
           <p className="text-xs text-[#7A7A7A]">Settings</p>
         </div>
-        <div className="border w-[200px]"></div>
+        <div className="border-b-2 border-[#EAECF0] mt-8" />
         <div className="flex w-[32px] mt-3">
           <img src={avatar} alt="ope" className="object-contain pr-1" />
-          <div className="flex flex-col ml-1">
+          <div className="flex flex-col ml-2 mt-2">
             <p className="justify-center items-center text-xs text-[#344054]">
               Owolu Opeyemi
             </p>
@@ -133,7 +169,11 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
               admin@peaktower.com
             </p>
           </div>
-          <img src={logout} alt="logout" className="flex top-1 right-1" />
+          <img
+            src={logout}
+            alt="logout"
+            className="flex ml-4 top-1 object-contain"
+          />
         </div>
       </div>
     </div>
