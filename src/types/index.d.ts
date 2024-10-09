@@ -21,6 +21,17 @@ declare type TableProps = {
   height: number;
 };
 
+declare type Property = {
+  id: number;
+  dateAdded: string;
+  propertyName: string;
+  address: string;
+  unitsLeft: string;
+  propertyType: string;
+  status: string;
+  actions?: any;
+};
+
 declare type SelectedItem = {
   status: "Success" | "Failure";
 };
@@ -69,7 +80,6 @@ declare type ConfirmationPageProps = {
   heading: string;
   placeholder: string;
   buttonText: string;
-  // navigateTo?: string;
 };
 
 declare type TaskCardProps = {
@@ -84,4 +94,14 @@ declare type TopInvestorsProps = {
   title: string;
   slots: string;
   imgUrl: string;
+};
+
+declare type propertyRows = {
+  id: number;
+  dateAdded: string;
+  propertyName: string;
+  address: string;
+  unitsLeft: string;
+  propertyType: string;
+  status: string;
 };
