@@ -15,6 +15,7 @@ import Welcome from "./pages/register/Welcome";
 import Overview from "./pages/admin/Overview";
 import Property from "./pages/admin/property/Property";
 import PropertiesList from "./pages/admin/property/PropertiesList";
+import ViewProperty from "./pages/admin/property/ViewProperty";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="property">
             <Route path="add-property" element={<Property />} />
             <Route path="properties" element={<PropertiesList />} />
+            <Route path="view" element={<ViewProperty />} />
           </Route>
           <Route path="payments" element={<Payments />} />
           <Route path="investments" element={<Investments />} />

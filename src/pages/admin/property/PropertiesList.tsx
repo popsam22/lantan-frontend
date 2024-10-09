@@ -7,8 +7,10 @@ import Tanstack from "../../../components/Tanstack";
 import { Property } from "../../../types";
 import clsx from "clsx";
 import { DeleteConfirmationPopover } from "./DeletePropertyConfirmation";
+import { useNavigate } from "react-router-dom";
 
 const PropertiesList = () => {
+  const navigate = useNavigate();
   const handleDeleteConfirm = () => {
     console.log("Delete confirmed");
   };
@@ -82,7 +84,12 @@ const PropertiesList = () => {
       header: "Actions",
       cell: () => (
         <div className="flex gap-1 justify-center items-center">
-          <img src={show} alt="show" className="w-9 h-9" />
+          <img
+            src={show}
+            alt="show"
+            className="w-9 h-9"
+            onClick={() => navigate("/admin/property/view")}
+          />
           <DeleteConfirmationPopover
             onConfirm={handleDeleteConfirm}
             onCancel={handleDeleteCancel}

@@ -105,3 +105,9 @@ declare type propertyRows = {
   propertyType: string;
   status: string;
 };
+
+declare type CustomButtonProps = {
+  label: string;
+  bgColor: string;
+  textColor?: string;
+};
