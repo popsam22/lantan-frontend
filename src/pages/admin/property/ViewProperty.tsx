@@ -13,6 +13,7 @@ import bathroom from "../../../assets/iconoir_bathroom.svg";
 import arrow from "../../../assets/Chevron_Left.svg";
 import doc from "../../../assets/File_Document.svg";
 import { useNavigate, useLocation } from "react-router-dom";
+import clsx from "clsx";
 
 const ViewProperty = () => {
   const navigate = useNavigate();
@@ -84,7 +85,14 @@ const ViewProperty = () => {
       <div className="flex justify-between mt-4 flex-1">
         <div className="">
           <div className="border-b-2 py-4">
-            <p className="text-[#075AAA] text-center rounded-2xl bg-[#F1F6FE] text-xs p-2 w-[141px]">
+            <p
+              className={clsx(
+                "text-center rounded-2xl text-xs p-2 w-[141px]",
+                propertyType === "Co-ownership"
+                  ? "bg-[#F8F9FC] text-[#363F72]"
+                  : "text-[#075AAA] bg-[#F1F6FE]"
+              )}
+            >
               {propertyType}
             </p>
             <h1 className="text-[#2E2E2E] text-3xl font-medium tracking-wide my-2.5">
