@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const PropertiesList = () => {
   const navigate = useNavigate();
+
   const handleDeleteConfirm = () => {
     console.log("Delete confirmed");
   };
@@ -82,13 +83,21 @@ const PropertiesList = () => {
     }),
     columnHelper.accessor("actions", {
       header: "Actions",
-      cell: () => (
+      cell: (rows) => (
         <div className="flex gap-1 justify-center items-center">
           <img
             src={show}
             alt="show"
             className="w-9 h-9"
-            onClick={() => navigate("/admin/property/view")}
+            onClick={() =>
+              navigate("/admin/property/view", {
+                state: {
+                  propertyType: rows.row.original.propertyType,
+                  propertyName: rows.row.original.propertyName,
+                  address: rows.row.original.address,
+                },
+              })
+            }
           />
           <DeleteConfirmationPopover
             onConfirm={handleDeleteConfirm}

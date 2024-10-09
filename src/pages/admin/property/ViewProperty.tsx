@@ -1,7 +1,7 @@
 import CustomButton from "@/components/CustomButton";
 import previous from "../../../assets/arrow-left.png";
 import propertyImg from "../../../assets/Frame 518.png";
-import location from "../../../assets/Icon.png";
+import position from "../../../assets/Icon.png";
 import home from "../../../assets/tabler_smart-home.svg";
 import security from "../../../assets/hugeicons_security-lock.svg";
 import light from "../../../assets/healthicons_electricity-outline.svg";
@@ -12,10 +12,12 @@ import solar from "../../../assets/ic_outline-solar-power.svg";
 import bathroom from "../../../assets/iconoir_bathroom.svg";
 import arrow from "../../../assets/Chevron_Left.svg";
 import doc from "../../../assets/File_Document.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const ViewProperty = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { propertyName, propertyType, address } = location.state || {};
   return (
     <div className="rounded-lg border bg-[#FCFCFD] min-h-screen p-4 ">
       <div className="flex items-center justify-between mb-2">
@@ -83,20 +85,20 @@ const ViewProperty = () => {
         <div className="">
           <div className="border-b-2 py-4">
             <p className="text-[#075AAA] text-center rounded-2xl bg-[#F1F6FE] text-xs p-2 w-[141px]">
-              Property Purchase
+              {propertyType}
             </p>
             <h1 className="text-[#2E2E2E] text-3xl font-medium tracking-wide my-2.5">
-              Bradford Apartment
+              {propertyName}
             </h1>
             <p className="text-[#5C5C5C] text-sm font-light flex items-center mb-3">
               <img
-                src={location}
+                src={position}
                 alt="location"
                 width={20}
                 height={20}
                 className="object-contain mr-2"
               />
-              32, Herbert, Yaba, Lagos
+              {address}
             </p>
           </div>
 
