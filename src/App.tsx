@@ -17,6 +17,7 @@ import Property from "./pages/admin/property/Property";
 import PropertiesList from "./pages/admin/property/PropertiesList";
 import ViewProperty from "./pages/admin/property/ViewProperty";
 import EditProperty from "./pages/admin/property/EditProperty";
+import Review from "./pages/admin/Review";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           </Route>
           <Route path="payments" element={<Payments />} />
           <Route path="investments" element={<Investments />} />
+          <Route path="reviews" element={<Review />} />
         </Route>
       </Routes>
       <ToastContainer

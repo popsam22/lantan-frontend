@@ -1,8 +1,8 @@
 import { Card, CardContent, Typography, Box } from "@mui/material";
-import profits from "../assets/_Changeprofit.png";
-import loss from "../assets/_Changeloss.png";
-import wallet from "../assets/walletwallet.png";
-import people from "../assets/Frame 490.png";
+import profits from "../assets/_Change.svg";
+import loss from "../assets/-Change.svg";
+import wallet from "../assets/Component 1.svg";
+import people from "../assets/Component 2.svg";
 import property from "../assets/Apartment_Home_Icon_UIAproperty.png";
 import { CardProp } from "../types";
 
@@ -63,7 +63,15 @@ const InvestmentCard = ({ title, amount, profit, icon }: CardProp) => {
               {<img src={wallet} alt="wallet" />}
             </Box>
           ) : icon === "people" ? (
-            <Box>{<img src={people} alt="people" />}</Box>
+            <Box
+              sx={{
+                border: "1px solid #D0D5DD",
+                borderRadius: "8px",
+                padding: "8px",
+              }}
+            >
+              {<img src={people} alt="people" />}
+            </Box>
           ) : (
             <Box
               sx={{

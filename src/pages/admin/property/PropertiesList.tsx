@@ -6,7 +6,7 @@ import { rows } from "../../../constants/property";
 import Tanstack from "../../../components/Tanstack";
 import { Property } from "../../../types";
 import clsx from "clsx";
-import { DeleteConfirmationPopover } from "./DeletePropertyConfirmation";
+import { ConfirmationPopover } from "./Popover";
 import { useNavigate } from "react-router-dom";
 
 const PropertiesList = () => {
@@ -99,9 +99,12 @@ const PropertiesList = () => {
               })
             }
           />
-          <DeleteConfirmationPopover
+          <ConfirmationPopover
             onConfirm={handleDeleteConfirm}
             onCancel={handleDeleteCancel}
+            title="Delete Property"
+            leftText="No, Cancel"
+            rightText="Yes, Continue"
           />
           <img src={edit} alt="edit" className="w-5 h-5 cursor-pointer" />
         </div>

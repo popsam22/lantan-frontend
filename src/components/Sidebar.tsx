@@ -134,23 +134,31 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
               <p className="text-xs text-[#7A7A7A]">Investments</p>
             </div>
           </Link>
-          <div className="flex gap-4 mb-2 items-center p-2 rounded">
-            <img
-              src={review}
-              alt="review"
-              width={20}
-              height={20}
-              className="object-contain"
-            />
-            <div className="flex justify-between items-center w-full">
-              <p className="text-xs text-[#7A7A7A] justify-center items-center">
-                Review
-              </p>
-              <p className="text-white bg-[#075AAA] p-1 rounded-full text-xs">
-                10
-              </p>
+          <Link to="/admin/reviews">
+            <div
+              className={clsx(
+                "flex gap-4 mb-2 items-center p-2 rounded",
+                select === "Review" && "bg-[#FAFCFF]"
+              )}
+              onClick={() => handleClick("Review")}
+            >
+              <img
+                src={review}
+                alt="review"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
+              <div className="flex justify-between items-center w-full">
+                <p className="text-xs text-[#7A7A7A] justify-center items-center">
+                  Review
+                </p>
+                <p className="text-white bg-[#075AAA] p-1 rounded-full text-xs">
+                  10
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="px-3">

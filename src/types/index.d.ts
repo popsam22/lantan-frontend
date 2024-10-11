@@ -51,6 +51,14 @@ declare type Investment = {
   check: string;
   actions?: any;
 };
+declare type Reviews = {
+  id: number;
+  created: string;
+  description: string;
+  from: string;
+  status: string;
+  actions?: any;
+};
 
 declare type SelectedItem = {
   status?: string;
