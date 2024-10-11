@@ -17,7 +17,7 @@ export const rows: Reviews[] = [
   },
   {
     id: 3,
-    created: "Today",
+    created: "24, Mar, 2024",
     description: "I love the response time",
     from: "Busola Oke",
     status: "Solved",
