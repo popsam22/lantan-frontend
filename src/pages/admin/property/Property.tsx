@@ -7,6 +7,7 @@ import { useState } from "react";
 import LatanaModal from "../../../components/Modal";
 import success from "../../../assets/Featured icon.png";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "@/components/CustomButton";
 
 const Property = () => {
   const [unitSale, setUnitSale] = useState(false);
@@ -61,15 +62,16 @@ const Property = () => {
             Fill the Information below to Add New Property
           </p>
           <div className="flex justify-between gap-4">
-            <button
+            <CustomButton
+              label="Add Property"
+              bgColor="#075AAA"
               onClick={() => setIsOpen(true)}
-              className="w-[158px] text-white font-semibold text-sm rounded-lg p-4 mb-2 bg-[#075AAA] hover:cursor-pointer"
-            >
-              Add Property
-            </button>
-            <button className="w-[158px] text-[#206AB2] font-semibold text-sm rounded-lg p-4 mb-2 bg-[#F1F6FE] hover:cursor-pointer">
-              Cancel
-            </button>
+            />
+            <CustomButton
+              label="Cancel"
+              bgColor="#F1F6FE"
+              textColor="#206AB2"
+            />
           </div>
         </div>
         <div className="flex rounded-lg py-3 gap-3">

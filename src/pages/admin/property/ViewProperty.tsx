@@ -18,7 +18,7 @@ import clsx from "clsx";
 const ViewProperty = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { propertyName, propertyType, address } = location.state || {};
+  const { propertyName, propertyType, address } = location.state;
   return (
     <div className="rounded-lg border bg-[#FCFCFD] min-h-screen p-4 ">
       <div className="flex items-center justify-between mb-2">
@@ -36,7 +36,11 @@ const ViewProperty = () => {
           Back
         </button>
         <div className="flex gap-3">
-          <CustomButton label="Edit Property" bgColor="#075AAA" />
+          <CustomButton
+            label="Edit Property"
+            bgColor="#075AAA"
+            onClick={() => navigate("/admin/property/edit")}
+          />
           <CustomButton
             label="Archive Property"
             bgColor="#FAFAFA"
@@ -199,45 +203,91 @@ const ViewProperty = () => {
           </div>
         </div>
         <div className="flex flex-col rounded-lg border w-full max-w-[488px] h-[253px] p-3 bg-[#FCFCFD]">
-          <p className="text-[#5C5C5C] uppercase font-light mb-3">
-            Property price
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
-                Studio Apartment
-              </h1>
-              <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
-                N28,000,000.00
+          {propertyType === "Property Purchase" ? (
+            <>
+              <p className="text-[#5C5C5C] uppercase font-light mb-3">
+                Property price
               </p>
-            </div>
-            <div>
-              <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
-                Initial Deposit
-              </h1>
-              <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
-                N10,000,000.00
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    Studio Apartment
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    N28,000,000.00
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    Initial Deposit
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    N10,000,000.00
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    One Bedroom Apartment
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    N48,000,000.00
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    Initial Deposit
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    N10,000,000.00
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="text-[#5C5C5C] uppercase font-light mb-3">
+                Slot price
               </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
-                One Bedroom Apartment
-              </h1>
-              <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
-                N48,000,000.00
-              </p>
-            </div>
-            <div>
-              <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
-                Initial Deposit
-              </h1>
-              <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
-                N10,000,000.00
-              </p>
-            </div>
-          </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    Price per slot
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    N2,000,000.00
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    Total Slots
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    95
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <h1 className="text-[#5C5C5C] font-light text-sm mb-2">
+                    Total Slots Bought
+                  </h1>
+                  <p className="text-[#2E2E2E] text-2xl font-semibold mb-5">
+                    50
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-[#009951] font-light text-sm mb-2">
+                    Total Available Slots
+                  </h1>
+                  <p className="text-[#14AE5C] text-2xl font-semibold mb-5">
+                    45
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="w-full my-4">

@@ -1,7 +1,7 @@
 import { InputProps } from "../types";
 import uploadIcon from "../assets/Cloud_Upload.png";
 
-const FileInput = ({ label }: InputProps) => {
+const FileInput = ({ label, placeholder }: InputProps) => {
   return (
     <div>
       <div className="flex flex-col">
@@ -10,7 +10,7 @@ const FileInput = ({ label }: InputProps) => {
           <div className="flex w-full justify-between items-center border p-3 rounded-lg mt-2 hover:cursor-pointer">
             <input type="file" className="hidden" />
             <span className="text-[#A3A3A3] text-sm font-light">
-              Click here to upload file
+              {placeholder ? placeholder : "Click here to upload file"}
             </span>
             <img
               src={uploadIcon}

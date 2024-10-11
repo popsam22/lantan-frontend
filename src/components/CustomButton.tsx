@@ -1,7 +1,12 @@
 import { CustomButtonProps } from "@/types";
 import clsx from "clsx";
 
-const CustomButton = ({ label, bgColor, textColor }: CustomButtonProps) => {
+const CustomButton = ({
+  label,
+  bgColor,
+  textColor,
+  onClick,
+}: CustomButtonProps) => {
   return (
     <div>
       <button
@@ -10,6 +15,7 @@ const CustomButton = ({ label, bgColor, textColor }: CustomButtonProps) => {
           `bg-[${bgColor}]`,
           textColor ? `text-[${textColor}]` : "text-[#fff]"
         )}
+        onClick={onClick}
       >
         {label}
       </button>

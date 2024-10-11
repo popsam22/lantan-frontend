@@ -49,10 +49,12 @@ declare type InputProps = {
   label: string;
   placeholder?: string;
   bottomText?: string;
+  value?: string;
 };
 
 declare type CheckboxInputProps = {
   label: string;
+  checked?: boolean;
   onChange?: (selected: ChangeEventHandler<HTMLInputElement>) => void;
 };
 
@@ -63,6 +65,8 @@ declare type ButtonProps = {
 
 declare type ImageProp = {
   full?: boolean;
+  editProperty?: boolean;
+  previewImg?: boolean;
 };
 
 declare type InputFieldProp = {
@@ -110,4 +114,5 @@ declare type CustomButtonProps = {
   label: string;
   bgColor: string;
   textColor?: string;
+  onClick?: () => void;
 };
