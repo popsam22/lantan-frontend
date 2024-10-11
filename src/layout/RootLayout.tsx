@@ -11,7 +11,7 @@ const RootLayout = () => {
         <Sidebar setItem={setSelectedItem} select={selectedItem} />
         <div className="flex flex-col flex-1">
           <Navbar item={selectedItem} />
-          <section className="flex-1 rounded-3xl bg-[#E8E8E8] m-4">
+          <section className="flex-1 rounded-3xl bg-[#FCFCFD] m-4">
             <div className="w-full">
               <Outlet />
             </div>

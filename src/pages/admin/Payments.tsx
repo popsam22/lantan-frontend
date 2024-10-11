@@ -1,10 +1,10 @@
 import Button from "@mui/material/Button";
 import search from "../../assets/Search_Magnifying_Glasssearch.png";
-import date from "../../assets/time-linedate.png";
-import cloud from "../../assets/download-cloud-linecloud.png";
-import flag from "../../assets/flag-lineflag.png";
-import dropdown from "../../assets/arrow-down-s-linedropdown.png";
-import { Payment } from "../../types";
+import date from "../../assets/time-line.svg";
+import cloud from "../../assets/download-cloud-line.svg";
+import flag from "../../assets/flag-line.svg";
+import dropdown from "../../assets/arrow-down-s-line.svg";
+import { Payment, PaymentsColumnFilter } from "../../types";
 import { createColumnHelper } from "@tanstack/react-table";
 import { rows } from "../../constants/payments";
 import { useState } from "react";
@@ -19,9 +19,46 @@ const Payments = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<SelectedItem | null>(null);
+  const [columnFilters, setColumnFilters] = useState<PaymentsColumnFilter[]>(
+    []
+  );
+
+  const filterPaymentHandler = (tab: number) => {
+    setActiveTab(tab);
+    if (tab === 0) {
+      setColumnFilters([]);
+    } else if (tab === 1) {
+      setColumnFilters([{ id: "status", value: "Success" }]);
+    } else if (tab === 2) {
+      setColumnFilters([{ id: "status", value: "Failed" }]);
+    }
+  };
 
   const columnHelper = createColumnHelper<Payment>();
   const columns = [
+    columnHelper.accessor("check", {
+      header: ({ table }) => (
+        <input
+          type="checkbox"
+          onChange={(e) => {
+            const checked = e.target.checked;
+            table.getRowModel().rows.forEach((row) => {
+              row.getToggleSelectedHandler()(checked);
+            });
+          }}
+        />
+      ),
+      cell: ({ row }) => (
+        <input
+          type="checkbox"
+          {...{
+            checked: row.getIsSelected(),
+            onChange: row.getToggleSelectedHandler(),
+          }}
+        />
+      ),
+      size: 59,
+    }),
     columnHelper.accessor("dateCreated", {
       header: "Date Added",
       cell: (info) => info.getValue(),
@@ -69,7 +106,7 @@ const Payments = () => {
             }}
             src={show}
             alt="show details"
-            className="w-10 h-10"
+            className="w-10 h-10 cursor-pointer"
           />
           <img
             onClick={() =>
@@ -77,7 +114,7 @@ const Payments = () => {
             }
             src={cloud}
             alt="cloud"
-            className="w-5 h-5"
+            className="w-5 h-5 cursor-pointer"
           />
         </div>
       ),
@@ -185,7 +222,7 @@ const Payments = () => {
                     />
                   }
                 >
-                  <p className="text-[#206AB2] px-2 py-2 capitalize">
+                  <p className="text-[#206AB2] px-2 py-2 normal-case">
                     Export as CSV
                   </p>
                 </Button>
@@ -211,13 +248,20 @@ const Payments = () => {
                   />
                 }
               >
-                <p className="text-[#3D3D3D] px-2 py-2 capitalize">Export</p>
+                <p
+                  className="text-[#3D3D3D] px-2 py-2 capitalize"
+                  onClick={() =>
+                    toast.success("Your File has been downloaded successfully")
+                  }
+                >
+                  Export
+                </p>
               </Button>
             </div>
           </div>
           <div className="flex mb-4 cursor-pointer w-fit">
             <p
-              onClick={() => setActiveTab(0)}
+              onClick={() => filterPaymentHandler(0)}
               className={`text-sm mr-4 cursor-pointer ${
                 activeTab === 0
                   ? "text-[#075AAA] border-b-2 border-[#075AAA]"
@@ -227,7 +271,7 @@ const Payments = () => {
               All Payments
             </p>
             <p
-              onClick={() => setActiveTab(1)}
+              onClick={() => filterPaymentHandler(1)}
               className={`text-sm mr-4 cursor-pointer ${
                 activeTab === 1
                   ? "text-[#075AAA] border-b-2 border-[#075AAA]"
@@ -237,7 +281,7 @@ const Payments = () => {
               Success
             </p>
             <p
-              onClick={() => setActiveTab(2)}
+              onClick={() => filterPaymentHandler(2)}
               className={`text-sm cursor-pointer ${
                 activeTab === 2
                   ? "text-[#075AAA] border-b-2 border-[#075AAA]"
@@ -304,7 +348,12 @@ const Payments = () => {
             </div>
           </div>
         </div>
-        <Tanstack columns={columns} rows={rows} />
+        <Tanstack
+          columns={columns}
+          rows={rows}
+          columnFilters={columnFilters}
+          setColumnFilters={setColumnFilters}
+        />
       </div>
     </div>
   );

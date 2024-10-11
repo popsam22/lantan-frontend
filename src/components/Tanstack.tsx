@@ -10,11 +10,15 @@ import next from "../assets/arrow-right.png";
 import { useState } from "react";
 import { Property } from "../types";
 
-const Tanstack = ({ rows, columns }: any) => {
+const Tanstack = ({ rows, columns, columnFilters, setColumnFilters }: any) => {
   const [data] = useState<Property[]>(rows);
   const table = useReactTable({
     data,
     columns,
+    state: {
+      columnFilters,
+    },
+    onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -25,7 +29,7 @@ const Tanstack = ({ rows, columns }: any) => {
     },
   });
   return (
-    <div className="p-3 pt-0">
+    <div className="p-3 pt-0 pl-0">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse mt-5 bg-white shadow-sm rounded-lg overflow-hidden">
           <thead className="bg-[#F9FAFB]">
@@ -80,10 +84,6 @@ const Tanstack = ({ rows, columns }: any) => {
           />
           <span className="text-sm text-[#2E2E2E] font-semibold">Previous</span>
         </button>
-        {/* <span className="text-sm text-gray-700">
-          Page {table.getState().pagination.pageIndex + 1} of{" "}
-          {table.getPageCount()}
-        </span> */}
         <div className="flex gap-9">
           <p className="text-[#5C5C5C] text-sm text-center">1</p>
           <p className="text-[#5C5C5C] text-sm text-center">2</p>

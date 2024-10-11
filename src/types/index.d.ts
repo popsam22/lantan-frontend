@@ -38,6 +38,7 @@ declare type Payment = {
   customer: string;
   amount: number;
   status: string;
+  check: string;
   actions?: any;
 };
 
@@ -124,4 +125,9 @@ declare type CustomButtonProps = {
   bgColor: string;
   textColor?: string;
   onClick?: () => void;
+};
+
+declare type PaymentsColumnFilter = {
+  id: string;
+  value: string;
 };

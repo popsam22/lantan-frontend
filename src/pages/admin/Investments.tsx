@@ -1,10 +1,10 @@
 import { Box, Button } from "@mui/material";
 import cloud from "../../assets/download-cloud-linecloud.png";
 import InvestmentCard from "../../components/InvestmentCard";
-import flag from "../../assets/flag-lineflag.png";
-import dropdown from "../../assets/arrow-down-s-linedropdown.png";
+import flag from "../../assets/flag-line.svg";
+import dropdown from "../../assets/arrow-down-s-line.svg";
 import search from "../../assets/Search_Magnifying_Glasssearch.png";
-import date from "../../assets/time-linedate.png";
+import date from "../../assets/time-line.svg";
 import Table from "../../components/Table";
 import { investmentColumns, investmentRow } from "../../constants/investment";
 
