@@ -88,7 +88,7 @@ const PropertiesList = () => {
           <img
             src={show}
             alt="show"
-            className="w-9 h-9"
+            className="w-9 h-9 cursor-pointer"
             onClick={() =>
               navigate("/admin/property/view", {
                 state: {
@@ -103,7 +103,7 @@ const PropertiesList = () => {
             onConfirm={handleDeleteConfirm}
             onCancel={handleDeleteCancel}
           />
-          <img src={edit} alt="edit" className="w-5 h-5" />
+          <img src={edit} alt="edit" className="w-5 h-5 cursor-pointer" />
         </div>
       ),
     }),

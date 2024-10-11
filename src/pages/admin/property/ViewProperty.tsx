@@ -52,36 +52,36 @@ const ViewProperty = () => {
         <img
           src={propertyImg}
           alt="property image"
-          className="h-[408px] w-[568px] rounded-lg"
+          className="h-[408px] w-full rounded-lg"
         />
         <div className="flex flex-col w-full">
           <div className="grid grid-cols-2 gap-2 mb-2">
             <img
               src={propertyImg}
               alt="property image"
-              className="h-[215px] w-[274px] object-cover rounded-lg"
+              className="h-[215px] w-full object-cover rounded-lg"
             />
             <img
               src={propertyImg}
               alt="property image"
-              className="h-[215px] w-[274px] object-cover rounded-lg"
+              className="h-[215px] w-full object-cover rounded-lg"
             />
           </div>
           <div className="grid grid-cols-3 gap-2">
             <img
               src={propertyImg}
               alt="property image"
-              className="h-[182px] w-[177px] object-cover rounded-lg"
+              className="h-[182px] w-full object-cover rounded-lg"
             />
             <img
               src={propertyImg}
               alt="property image"
-              className="h-[182px] w-[177px] object-cover rounded-lg"
+              className="h-[182px] w-full object-cover rounded-lg"
             />
             <img
               src={propertyImg}
               alt="property image"
-              className="h-[182px] w-[177px] object-cover rounded-lg"
+              className="h-[182px] w-full object-cover rounded-lg"
             />
           </div>
         </div>
