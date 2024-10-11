@@ -128,7 +128,7 @@ declare type CustomButtonProps = {
   onClick?: () => void;
 };
 
-declare type PaymentsColumnFilter = {
+declare type ColumnFilter = {
   id: string;
   value: string;
 };
