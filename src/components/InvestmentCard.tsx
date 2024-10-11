@@ -11,8 +11,10 @@ const InvestmentCard = ({ title, amount, profit, icon }: CardProp) => {
     <Card
       sx={{
         borderRadius: "10px",
+        border: "1px solid #E8E8E8",
         justifyContent: "space-between",
         alignItems: "center",
+        boxShadow: " 0 1px 2px 0 rgb(0 0 0 / 0.05)",
       }}
     >
       <CardContent>
