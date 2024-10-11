@@ -22,7 +22,7 @@ declare type TableProps = {
 };
 
 declare type Property = {
-  id: number;
+  // id: number;
   dateAdded: string;
   propertyName: string;
   address: string;
@@ -42,8 +42,19 @@ declare type Payment = {
   actions?: any;
 };
 
+declare type Investment = {
+  dateCreated: string;
+  propertyInvested: string;
+  customer: string;
+  amount: string;
+  investmentType: string;
+  check: string;
+  actions?: any;
+};
+
 declare type SelectedItem = {
-  status: string;
+  status?: string;
+  investmentType?: string;
 };
 
 declare type NavbarProp = {
@@ -108,16 +119,6 @@ declare type TopInvestorsProps = {
   title: string;
   slots: string;
   imgUrl: string;
-};
-
-declare type propertyRows = {
-  id: number;
-  dateAdded: string;
-  propertyName: string;
-  address: string;
-  unitsLeft: string;
-  propertyType: string;
-  status: string;
 };
 
 declare type CustomButtonProps = {

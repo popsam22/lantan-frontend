@@ -2,9 +2,10 @@ import Button from "@mui/material/Button";
 import search from "../../assets/Search_Magnifying_Glasssearch.png";
 import date from "../../assets/time-line.svg";
 import cloud from "../../assets/download-cloud-line.svg";
+import blue_cloud from "../../assets/download-cloud-line 2.svg";
 import flag from "../../assets/flag-line.svg";
 import dropdown from "../../assets/arrow-down-s-line.svg";
-import { Payment, PaymentsColumnFilter } from "../../types";
+import { Payment, ColumnFilter } from "../../types";
 import { createColumnHelper } from "@tanstack/react-table";
 import { rows } from "../../constants/payments";
 import { useState } from "react";
@@ -19,9 +20,7 @@ const Payments = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<SelectedItem | null>(null);
-  const [columnFilters, setColumnFilters] = useState<PaymentsColumnFilter[]>(
-    []
-  );
+  const [columnFilters, setColumnFilters] = useState<ColumnFilter[]>([]);
 
   const filterPaymentHandler = (tab: number) => {
     setActiveTab(tab);
@@ -216,7 +215,7 @@ const Payments = () => {
                   }}
                   startIcon={
                     <img
-                      src={cloud}
+                      src={blue_cloud}
                       alt="icon"
                       style={{ width: "20px", height: "20px" }}
                     />

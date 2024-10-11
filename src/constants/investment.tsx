@@ -1,58 +1,3 @@
-import { GridRenderCellParams } from "@mui/x-data-grid";
-import show from "../assets/_Button baseshow.png";
-import cloud from "../assets/download-cloud-linecloud.png";
-
-export const investmentColumns = [
-  {
-    field: "dateCreated",
-    headerName: "Date Created",
-    width: 183,
-  },
-  {
-    field: "propertyInvested",
-    headerName: "Property Invested",
-    width: 183,
-  },
-  {
-    field: "customer",
-    headerName: "Customer",
-    width: 183,
-  },
-  {
-    field: "amount",
-    headerName: "Amount",
-    width: 183,
-  },
-  {
-    field: "investmentType",
-    headerName: "Investment Type",
-    renderCell: (prop: GridRenderCellParams) => (
-      <button
-        style={{
-          backgroundColor: "#FAFCFF",
-          color: "#075AAA",
-          borderRadius: "50%",
-          width: "65px",
-        }}
-      >
-        {prop.value}
-      </button>
-    ),
-    width: 183,
-  },
-  {
-    field: "actions",
-    headerName: "Actions",
-    width: 183,
-    renderCell: () => (
-      <div className="flex gap-1 justify-center items-center">
-        <img src={show} alt="show details" className="w-10 h-10" />
-        <img src={cloud} alt="cloud" className="w-5 h-5" />
-      </div>
-    ),
-  },
-];
-
 export const investmentRow = [
   {
     id: 1,
@@ -65,9 +10,65 @@ export const investmentRow = [
   {
     id: 2,
     dateCreated: "May 1, 2023, 9:00AM",
-    propertyInvested: "Fortune Apartment",
+    propertyInvested: "Leeds II Apartment",
+    customer: "Victor Tosin",
+    amount: "4,000,000.00",
+    investmentType: "Co-ownership",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Prime Apartment",
     customer: "Azeez Kiki",
-    amount: "28,000,000.00",
+    amount: "500,000.00",
+    investmentType: "Co-ownership",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Bradford Suites",
+    customer: "Azeez Kiki",
+    amount: "2,500,000.00",
     investmentType: "Property Purchase",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Bradford Suites",
+    customer: "Azeez Kiki",
+    amount: "200,000.00",
+    investmentType: "Property Purchase",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Bradford Suites",
+    customer: "Azeez Kiki",
+    amount: "500,000.00",
+    investmentType: "Property Purchase",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Bradford Suites",
+    customer: "Azeez Kiki",
+    amount: "10,000,000.00",
+    investmentType: "Co-ownership",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Bradford Suites",
+    customer: "Azeez Kiki",
+    amount: "10,000,000.00",
+    investmentType: "Co-ownership",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1, 2023, 9:00AM",
+    propertyInvested: "Bradford Suites",
+    customer: "Azeez Kiki",
+    amount: "500,000.70",
+    investmentType: "Co-ownership",
   },
 ];
