@@ -22,7 +22,7 @@ declare type TableProps = {
 };
 
 declare type Property = {
-  // id: number;
+  id: number;
   dateAdded: string;
   propertyName: string;
   address: string;

@@ -1,6 +1,6 @@
-import { propertyRows } from "../types";
+import { Property } from "../types";
 
-export const rows: propertyRows[] = [
+export const rows: Property[] = [
   {
     id: 1,
     dateAdded: "May 1, 2023",
