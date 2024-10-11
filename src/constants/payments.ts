@@ -13,7 +13,7 @@ export const rows = [
     transactionId: "7GJ17321HASD...1313",
     customer: "Victor Tosin",
     amount: "00.00",
-    status: "Error",
+    status: "Failed",
   },
   {
     id: 3,

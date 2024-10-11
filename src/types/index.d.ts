@@ -32,8 +32,17 @@ declare type Property = {
   actions?: any;
 };
 
+declare type Payment = {
+  dateCreated: string;
+  transactionId: string;
+  customer: string;
+  amount: number;
+  status: string;
+  actions?: any;
+};
+
 declare type SelectedItem = {
-  status: "Success" | "Failure";
+  status: string;
 };
 
 declare type NavbarProp = {

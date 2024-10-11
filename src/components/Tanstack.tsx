@@ -25,7 +25,7 @@ const Tanstack = ({ rows, columns }: any) => {
     },
   });
   return (
-    <div className="p-3">
+    <div className="p-3 pt-0">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse mt-5 bg-white shadow-sm rounded-lg overflow-hidden">
           <thead className="bg-[#F9FAFB]">

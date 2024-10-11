@@ -6,7 +6,7 @@ import propertyImg from "../assets/Frame 518.png";
 import pencil from "../assets/edit-2.svg";
 
 const ImageInput = ({ full, previewImg = false }: ImageProp) => {
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewImage, setPreviewImage] = useState<string | null>(null); //for edit property
 
   useEffect(() => {
     if (previewImg) {
@@ -17,6 +17,7 @@ const ImageInput = ({ full, previewImg = false }: ImageProp) => {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files;
     if (file && file.length > 0) {
+      // create a url for that image so it can previewed (default is bradford)
       setPreviewImage(URL.createObjectURL(file[0]));
     }
   };
@@ -63,7 +64,7 @@ const ImageInput = ({ full, previewImg = false }: ImageProp) => {
               alt="edit"
               width={20}
               height={20}
-              className="object-contain"
+              className="object-contain cursor-pointer"
             />
             Replace Image
           </span>
