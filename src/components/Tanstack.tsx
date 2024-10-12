@@ -73,7 +73,7 @@ const Tanstack = ({ rows, columns, columnFilters, setColumnFilters }: any) => {
         <button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="flex p-2 border w-[115px] justify-evenly rounded-lg focus:outline-none transition duration-150 ease-in-out"
+          className="flex p-2 ml-3 border w-[115px] justify-evenly rounded-lg focus:outline-none transition duration-150 ease-in-out"
         >
           <img
             src={previous}
