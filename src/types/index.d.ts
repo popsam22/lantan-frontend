@@ -72,6 +72,17 @@ declare type Customer = {
   actions?: React.ReactNode;
 };
 
+declare type CustomerTransactionHistory = {
+  id: number;
+  dateCreated: string;
+  transactionID: string;
+  transactionType: string;
+  amount: string;
+  status: string;
+  check: string;
+  actions?: React.ReactNode;
+};
+
 declare type SelectedItem = {
   status?: string;
   investmentType?: string;

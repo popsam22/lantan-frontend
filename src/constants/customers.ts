@@ -92,3 +92,62 @@ export const rows: Customer[] = [
     walletBalance: "520,000.00",
   },
 ];
+
+export const customerTransactionHistory = [
+  {
+    id: 1,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Cash Investment",
+    amount: "800.00",
+    status: "Success",
+  },
+  {
+    id: 2,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Wallet Deposit",
+    amount: "00.00",
+    status: "Success",
+  },
+  {
+    id: 3,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Interest Payment",
+    amount: "500,000.00",
+    status: "Failed",
+  },
+  {
+    id: 4,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Cash Investment",
+    amount: "800.00",
+    status: "Failed",
+  },
+  {
+    id: 5,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Property Purchase",
+    amount: "2,500,000.00",
+    status: "Success",
+  },
+  {
+    id: 6,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Interest Payment",
+    amount: "500,000.00",
+    status: "Failed",
+  },
+  {
+    id: 7,
+    dateCreated: "May 1,2023 9:00AM",
+    transactionID: "7GJ17321HASD....1313",
+    transactionType: "Interest Payment",
+    amount: "520,000.00",
+    status: "Success",
+  },
+];

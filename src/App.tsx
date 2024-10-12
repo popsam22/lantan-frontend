@@ -20,6 +20,8 @@ import EditProperty from "./pages/admin/property/EditProperty";
 import Review from "./pages/admin/Review";
 import Customers from "./pages/admin/customers/Customers";
 import AddCustomer from "./pages/admin/customers/AddCustomer";
+import ViewCustomer from "./pages/admin/customers/ViewCustomer";
+import EditCustomer from "./pages/admin/customers/EditCustomer";
 
 const App = () => {
   return (
@@ -45,6 +47,8 @@ const App = () => {
           <Route path="customers">
             <Route index element={<Customers />} />
             <Route path="new" element={<AddCustomer />} />
+            <Route path="view" element={<ViewCustomer />} />
+            <Route path="update" element={<EditCustomer />} />
           </Route>
           <Route path="payments" element={<Payments />} />
           <Route path="investments" element={<Investments />} />

@@ -69,13 +69,24 @@ const Customers = () => {
     }),
     columnHelper.accessor("actions", {
       header: "Actions",
-      cell: (info) => (
+      cell: (rows) => (
         <div className="flex gap-5 items-center justify-start">
           <img
             src={show}
             alt="view"
             className="w-4 h-4 object-contain cursor-pointer"
-            onClick={() => info.getValue()}
+            onClick={() =>
+              navigate("/admin/customers/view", {
+                state: {
+                  dateJoined: rows.row.original.dateJoined,
+                  fullName: rows.row.original.fullName,
+                  emailAddress: rows.row.original.emailAddress,
+                  phoneNumber: rows.row.original.phoneNumber,
+                  verificationStatus: rows.row.original.verificationStatus,
+                  walletBalance: rows.row.original.walletBalance,
+                },
+              })
+            }
           />
           <img
             src={trash}
