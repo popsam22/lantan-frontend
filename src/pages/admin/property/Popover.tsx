@@ -3,7 +3,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import trash from "../../../assets/trash-2.png";
+import trash from "../../../assets/trash-2.svg";
 import line from "../../../assets/more-vertical.svg";
 import clsx from "clsx";
 
@@ -21,7 +21,7 @@ export const ConfirmationPopover = ({
         <img
           src={review === true ? line : trash}
           alt="delete"
-          className="w-5 h-5 cursor-pointer mr-2"
+          className="w-4 h-4 cursor-pointer"
         />
       </PopoverTrigger>
       <PopoverContent

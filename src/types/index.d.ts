@@ -1,4 +1,5 @@
 import { GridColDef } from "@mui/x-data-grid";
+import React from "react";
 
 declare type CardProp = {
   profit?: boolean;
@@ -29,7 +30,7 @@ declare type Property = {
   unitsLeft: string;
   propertyType: string;
   status: string;
-  actions?: any;
+  actions?: React.ReactNode;
 };
 
 declare type Payment = {
@@ -39,7 +40,7 @@ declare type Payment = {
   amount: number;
   status: string;
   check: string;
-  actions?: any;
+  actions?: React.ReactNode;
 };
 
 declare type Investment = {
@@ -49,7 +50,7 @@ declare type Investment = {
   amount: string;
   investmentType: string;
   check: string;
-  actions?: any;
+  actions?: React.ReactNode;
 };
 declare type Reviews = {
   id: number;
@@ -57,7 +58,18 @@ declare type Reviews = {
   description: string;
   from: string;
   status: string;
-  actions?: any;
+  actions?: React.ReactNode;
+};
+
+declare type Customer = {
+  id: number;
+  dateJoined: string;
+  fullName: string;
+  emailAddress: string;
+  phoneNumber: string;
+  verificationStatus: string;
+  walletBalance: string;
+  actions?: React.ReactNode;
 };
 
 declare type SelectedItem = {

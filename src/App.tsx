@@ -18,6 +18,8 @@ import PropertiesList from "./pages/admin/property/PropertiesList";
 import ViewProperty from "./pages/admin/property/ViewProperty";
 import EditProperty from "./pages/admin/property/EditProperty";
 import Review from "./pages/admin/Review";
+import Customers from "./pages/admin/customers/Customers";
+import AddCustomer from "./pages/admin/customers/AddCustomer";
 
 const App = () => {
   return (
@@ -39,6 +41,10 @@ const App = () => {
             <Route path="properties" element={<PropertiesList />} />
             <Route path="view" element={<ViewProperty />} />
             <Route path="edit" element={<EditProperty />} />
+          </Route>
+          <Route path="customers">
+            <Route index element={<Customers />} />
+            <Route path="new" element={<AddCustomer />} />
           </Route>
           <Route path="payments" element={<Payments />} />
           <Route path="investments" element={<Investments />} />

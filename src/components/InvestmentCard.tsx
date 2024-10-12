@@ -3,7 +3,7 @@ import profits from "../assets/_Change.svg";
 import loss from "../assets/-Change.svg";
 import wallet from "../assets/Component 1.svg";
 import people from "../assets/Component 2.svg";
-import property from "../assets/Apartment_Home_Icon_UIAproperty.png";
+import property from "../assets/Apartment_Home_Icon_UIA.svg";
 import { CardProp } from "../types";
 
 const InvestmentCard = ({ title, amount, profit, icon }: CardProp) => {

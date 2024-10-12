@@ -1,7 +1,10 @@
-import search from "../../../assets/Search_Magnifying_Glasssearch.png";
-import { createColumnHelper } from "@tanstack/react-table";
-import show from "../../../assets/_Button baseshow.png";
-import edit from "../../../assets/edit-2.png";
+import search from "../../../assets/search.svg";
+import {
+  createColumnHelper,
+  AccessorKeyColumnDef,
+} from "@tanstack/react-table";
+import show from "../../../assets/Show.svg";
+import edit from "../../../assets/edit.svg";
 import { rows } from "../../../constants/property";
 import Tanstack from "../../../components/Tanstack";
 import { Property } from "../../../types";
@@ -20,7 +23,7 @@ const PropertiesList = () => {
     console.log("Delete cancelled");
   };
   const columnHelper = createColumnHelper<Property>();
-  const columns = [
+  const columns: AccessorKeyColumnDef<Property, any>[] = [
     columnHelper.accessor("dateAdded", {
       header: "Date Added",
       cell: (info) => info.getValue(),
@@ -64,13 +67,13 @@ const PropertiesList = () => {
           className={clsx(
             "px-2 py-1 rounded-2xl text-xs whitespace-nowrap flex items-center",
             info.getValue() === "Still Selling"
-              ? "text-[#027A48] bg-[#ECFDF3]"
-              : "text-[#B42318] bg-[#FEF3F2]"
+              ? "text-[#027A48] bg-[#ECFDF3] w-[92px]"
+              : "text-[#B42318] bg-[#FEF3F2] w-[79px]"
           )}
         >
           <div
             className={clsx(
-              "w-2 h-2 rounded-full border mr-2",
+              "w-1.5 h-1.5 rounded-full mr-2",
               info.getValue() === "Still Selling"
                 ? "bg-[#12B76A]"
                 : "bg-[#F04438] mr-1"
@@ -84,11 +87,11 @@ const PropertiesList = () => {
     columnHelper.accessor("actions", {
       header: "Actions",
       cell: (rows) => (
-        <div className="flex gap-1 justify-center items-center">
+        <div className="flex gap-4 justify-center items-center">
           <img
             src={show}
             alt="show"
-            className="w-9 h-9 cursor-pointer"
+            className="w-4 h-4 cursor-pointer"
             onClick={() =>
               navigate("/admin/property/view", {
                 state: {
@@ -106,7 +109,7 @@ const PropertiesList = () => {
             leftText="No, Cancel"
             rightText="Yes, Continue"
           />
-          <img src={edit} alt="edit" className="w-5 h-5 cursor-pointer" />
+          <img src={edit} alt="edit" className="w-4 h-4 cursor-pointer" />
         </div>
       ),
     }),

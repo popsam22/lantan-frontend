@@ -1,15 +1,18 @@
 import Button from "@mui/material/Button";
-import search from "../../assets/Search_Magnifying_Glasssearch.png";
+import search from "../../assets/search.svg";
 import date from "../../assets/time-line.svg";
 import cloud from "../../assets/download-cloud-line.svg";
 import blue_cloud from "../../assets/download-cloud-line 2.svg";
 import flag from "../../assets/flag-line.svg";
 import dropdown from "../../assets/arrow-down-s-line.svg";
 import { Payment, ColumnFilter } from "../../types";
-import { createColumnHelper } from "@tanstack/react-table";
+import {
+  createColumnHelper,
+  AccessorKeyColumnDef,
+} from "@tanstack/react-table";
 import { rows } from "../../constants/payments";
 import { useState } from "react";
-import show from "../../assets/_Button baseshow.png";
+import show from "../../assets/Show.svg";
 import LantanModal from "../../components/Modal";
 import { toast } from "react-toastify";
 import { SelectedItem } from "../../types";
@@ -34,7 +37,7 @@ const Payments = () => {
   };
 
   const columnHelper = createColumnHelper<Payment>();
-  const columns = [
+  const columns: AccessorKeyColumnDef<Payment, any>[] = [
     columnHelper.accessor("check", {
       header: ({ table }) => (
         <input
@@ -97,7 +100,7 @@ const Payments = () => {
     columnHelper.accessor("actions", {
       header: "Actions",
       cell: (info) => (
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-4 items-center">
           <img
             onClick={() => {
               setIsOpen(true);
@@ -105,7 +108,7 @@ const Payments = () => {
             }}
             src={show}
             alt="show details"
-            className="w-10 h-10 cursor-pointer"
+            className="w-5 h-5 cursor-pointer"
           />
           <img
             onClick={() =>
@@ -113,7 +116,7 @@ const Payments = () => {
             }
             src={cloud}
             alt="cloud"
-            className="w-5 h-5 cursor-pointer"
+            className="w-6 h-5 cursor-pointer"
           />
         </div>
       ),

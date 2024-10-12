@@ -1,13 +1,16 @@
 import Tanstack from "@/components/Tanstack";
 import { Reviews } from "@/types";
-import { createColumnHelper } from "@tanstack/react-table";
+import {
+  createColumnHelper,
+  AccessorKeyColumnDef,
+} from "@tanstack/react-table";
 import clsx from "clsx";
 import { rows } from "@/constants/review";
 import { ConfirmationPopover } from "./property/Popover";
 
 const Review = () => {
   const columnHelper = createColumnHelper<Reviews>();
-  const columns = [
+  const columns: AccessorKeyColumnDef<Reviews, any>[] = [
     columnHelper.accessor("created", {
       header: "Created",
       cell: (info) => info.getValue(),
