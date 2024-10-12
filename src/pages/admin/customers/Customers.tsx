@@ -3,7 +3,7 @@ import search from "../../../assets/search.svg";
 import show from "../../../assets/Show.svg";
 import edit from "../../../assets/edit.svg";
 import trash from "../../../assets/trash-2.svg";
-import add from "../../../assets/download-cloud-line.svg";
+import add from "../../../assets/add.svg";
 import { rows } from "@/constants/customers";
 import { createColumnHelper } from "@tanstack/react-table";
 import { Customer } from "@/types";

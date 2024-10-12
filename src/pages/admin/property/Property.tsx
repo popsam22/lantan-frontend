@@ -5,7 +5,7 @@ import ImageInput from "../../../components/ImageInput";
 import TextInput from "../../../components/TextInput";
 import { useState } from "react";
 import LatanaModal from "../../../components/Modal";
-import success from "../../../assets/Featured icon.png";
+import success from "../../../assets/Featured icon.svg";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "@/components/CustomButton";
 

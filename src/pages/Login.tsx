@@ -1,5 +1,5 @@
 import Lantan from "../assets/Lantan.svg";
-import email from "../assets/mail.png";
+import email from "../assets/mail.svg";
 import password from "../assets/password.png";
 import bg from "../assets/Frame 484.png";
 import { useNavigate } from "react-router-dom";
@@ -34,7 +34,7 @@ const Login = () => {
             </p>
           </div>
           <div className="flex flex-col">
-            <label htmlFor="" className="text-sm text-[#344054] mb-2">
+            <label htmlFor="" className="text-sm text-[#344054] mb-2 flex">
               Email
             </label>
             <div className="flex items-center overflow-hidden w-full border p-3 rounded-lg max-w-[343px] mb-5">
@@ -48,18 +48,18 @@ const Login = () => {
               <input
                 type="text"
                 placeholder="enter your email address"
-                className="flex flex-1 outline-none"
+                className="flex flex-1 outline-none bg-inherit text-[#1F1F1F] text-sm placeholder:text-[#A3A3A3] placeholder:font-light"
               />
             </div>
             <div className="flex flex-col mb-10">
-              <label htmlFor="" className="text-sm text-[#3D3D3D] mb-2">
+              <label htmlFor="" className="text-sm text-[#3D3D3D] mb-2 flex">
                 Password
               </label>
               <div className="flex border p-3 rounded-lg justify-between w-[343px]">
                 <input
-                  type="text"
+                  type="password"
                   placeholder="enter your password"
-                  className="flex flex-1 outline-none"
+                  className="flex flex-1 outline-none bg-inherit text-[#1F1F1F] text-sm placeholder:text-[#A3A3A3] placeholder:font-light"
                 />
                 <img
                   src={password}

@@ -1,16 +1,16 @@
 import Lantan from "../../assets/Lantan.svg";
 import bg from "../../assets/Frame 484.png";
 import { useNavigate } from "react-router-dom";
-import { PhoneInput } from "react-international-phone";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
-import "react-international-phone/style.css";
 
 const PersonalInfo = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
   return (
     <section>
-      <div className="flex justify-between flex-1 overflow-hidden h-screen bg-[#FCFCFD]">
+      <div className="flex justify-between flex-1 overflow-hidden min-h-screen bg-[#FCFCFD]">
         <div className="flex flex-1 flex-col m-20 pl-5 justify-center w-full relative lg:left-5">
           <div className="mb-16">
             <img
@@ -67,17 +67,25 @@ const PersonalInfo = () => {
               >
                 Phone number
               </label>
-              {/* <div className="flex border rounded-lg "> */}
               <PhoneInput
-                defaultCountry="ng"
+                country="ng"
                 value={phone}
                 onChange={(phone) => setPhone(phone)}
-                className="w-full"
-                inputClassName="flex w-full"
+                containerClass="w-full items-center"
+                inputStyle={{
+                  width: "100%",
+                  padding: "20px",
+                  paddingLeft: "70px",
+                  border: "1px solid #E8E8E8",
+                }}
+                buttonStyle={{
+                  padding: "0 7px",
+                  backgroundColor: "white",
+                }}
+                placeholder="9081688842"
               />
-              {/* </div> */}
             </div>
-            <div className="flex justify-between gap-6 w-full">
+            <div className="flex justify-between gap-6 w-full mt-10">
               <button
                 className="w-full text-[#206AB2] rounded-xl p-4  bg-[#F1F6FE] hover:cursor-pointer"
                 onClick={() => navigate("/register")}

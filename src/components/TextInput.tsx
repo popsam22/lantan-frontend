@@ -20,7 +20,7 @@ const TextInput = ({ label, placeholder, bottomText, value }: InputProps) => {
           placeholder={placeholder}
           value={change}
           onChange={inputChangeHandler}
-          className="flex flex-1 outline-none w-full text-sm text-[#1F1F1F] placeholder:text-[#A3A3A3] placeholder:font-light value"
+          className="flex flex-1 outline-none w-full bg-inherit text-sm text-[#1F1F1F] placeholder:text-[#A3A3A3] placeholder:font-light"
         />
       </div>
       <p className="text-[#A3A3A3] text-xs font-light">{bottomText}</p>

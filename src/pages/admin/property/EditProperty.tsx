@@ -3,7 +3,7 @@ import FileInput from "@/components/FileInput";
 import ImageInput from "@/components/ImageInput";
 import LatanaModal from "@/components/Modal";
 import TextInput from "@/components/TextInput";
-import success from "../../../assets/Featured icon.png";
+import success from "../../../assets/Featured icon.svg";
 import Button from "../../../components/Button";
 import CustomButton from "@/components/CustomButton";
 import { useState } from "react";

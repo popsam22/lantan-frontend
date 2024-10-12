@@ -1,6 +1,6 @@
 import Lantan from "../../assets/Lantan.svg";
 import bg from "../../assets/Frame 484.png";
-import email from "../../assets/mail.png";
+import email from "../../assets/mail.svg";
 import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
