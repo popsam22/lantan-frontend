@@ -87,7 +87,7 @@ const PropertiesList = () => {
     columnHelper.accessor("actions", {
       header: "Actions",
       cell: (rows) => (
-        <div className="flex gap-4 justify-center items-center">
+        <div className="flex gap-4 justify-start items-center">
           <img
             src={show}
             alt="show"
