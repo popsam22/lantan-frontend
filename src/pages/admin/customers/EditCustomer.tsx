@@ -158,7 +158,7 @@ const EditCustomer = () => {
           label="Cancel"
           bgColor="#F1F6FE"
           textColor="#206AB2"
-          onClick={() => navigate("/admin/customers/view")}
+          onClick={() => navigate("/admin/customers")}
         />
       </div>
     </div>
