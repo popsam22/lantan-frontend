@@ -153,11 +153,12 @@ const AddCustomer = () => {
                   width: "100%",
                   padding: "20px",
                   paddingLeft: "70px",
-                  border: "1px solid #E8E8E8",
                 }}
                 buttonStyle={{
                   padding: "0 7px",
                   backgroundColor: "white",
+                  fontSize: "14px",
+                  fontWeight: "lighter",
                 }}
                 placeholder="9081688842"
               />

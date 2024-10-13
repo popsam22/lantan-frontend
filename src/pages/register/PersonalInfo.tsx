@@ -76,7 +76,6 @@ const PersonalInfo = () => {
                   width: "100%",
                   padding: "20px",
                   paddingLeft: "70px",
-                  border: "1px solid #E8E8E8",
                 }}
                 buttonStyle={{
                   padding: "0 7px",

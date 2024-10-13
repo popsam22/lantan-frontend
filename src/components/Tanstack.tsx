@@ -5,8 +5,8 @@ import {
   getPaginationRowModel,
   getFilteredRowModel,
 } from "@tanstack/react-table";
-import previous from "../assets/arrow-left.png";
-import next from "../assets/arrow-right.png";
+import previous from "../assets/arrow-left.svg";
+import next from "../assets/arrow-right.svg";
 import { useState } from "react";
 import { Property } from "../types";
 

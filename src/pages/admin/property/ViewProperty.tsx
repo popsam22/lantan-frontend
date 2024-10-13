@@ -1,5 +1,5 @@
 import CustomButton from "@/components/CustomButton";
-import previous from "../../../assets/arrow-left.png";
+import previous from "../../../assets/arrow-left.svg";
 import propertyImg from "../../../assets/Frame 518.png";
 import position from "../../../assets/Icon.png";
 import home from "../../../assets/tabler_smart-home.svg";

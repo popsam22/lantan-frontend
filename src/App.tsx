@@ -22,6 +22,7 @@ import Customers from "./pages/admin/customers/Customers";
 import AddCustomer from "./pages/admin/customers/AddCustomer";
 import ViewCustomer from "./pages/admin/customers/ViewCustomer";
 import EditCustomer from "./pages/admin/customers/EditCustomer";
+import Settings from "./pages/admin/Settings";
 
 const App = () => {
   return (
@@ -53,6 +54,9 @@ const App = () => {
           <Route path="payments" element={<Payments />} />
           <Route path="investments" element={<Investments />} />
           <Route path="reviews" element={<Review />} />
+          <Route path="settings">
+            <Route index element={<Settings />} />
+          </Route>
         </Route>
       </Routes>
       <ToastContainer

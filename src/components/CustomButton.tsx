@@ -6,14 +6,16 @@ const CustomButton = ({
   bgColor,
   textColor,
   onClick,
+  width,
 }: CustomButtonProps) => {
   return (
     <div>
       <button
         className={clsx(
-          "w-[178px] font-semibold text-sm rounded-lg p-3 mb-2 hover:cursor-pointer",
+          "font-semibold text-sm rounded-lg p-3 mb-2 hover:cursor-pointer transition-all ease-out duration-300",
           `bg-[${bgColor}]`,
-          textColor ? `text-[${textColor}]` : "text-[#fff]"
+          textColor ? `text-[${textColor}]` : "text-[#fff]",
+          width ? `w-[${width}]` : "w-[178px]"
         )}
         onClick={onClick}
       >

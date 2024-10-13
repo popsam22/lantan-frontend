@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { InputProps } from "../types";
+import clsx from "clsx";
 
 //pick the last child and split the label with ( then color it #397BBB)
 
-const TextInput = ({ label, placeholder, bottomText, value }: InputProps) => {
+const TextInput = ({
+  label,
+  placeholder,
+  bottomText,
+  value,
+  className,
+}: InputProps) => {
   const [change, setChange] = useState(value);
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setChange(e.target.value);
@@ -14,7 +21,12 @@ const TextInput = ({ label, placeholder, bottomText, value }: InputProps) => {
       <label className="text-sm text-[#3D3D3D] font-medium mb-2 ">
         {label}
       </label>
-      <div className="flex items-center w-full border p-3 rounded-lg mb-3">
+      <div
+        className={clsx(
+          "flex items-center w-full border p-3 rounded-lg mb-3",
+          className && `${className}`
+        )}
+      >
         <input
           type="text"
           placeholder={placeholder}

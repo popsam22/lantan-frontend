@@ -83,6 +83,15 @@ declare type CustomerTransactionHistory = {
   actions?: React.ReactNode;
 };
 
+declare type Setting = {
+  id: number;
+  dateAdded: string;
+  fullName: string;
+  emailAddress: string;
+  role: string;
+  actions?: React.ReactNode;
+};
+
 declare type SelectedItem = {
   status?: string;
   investmentType?: string;
@@ -102,6 +111,8 @@ declare type InputProps = {
   placeholder?: string;
   bottomText?: string;
   value?: string;
+  className?: string;
+  onClick?: () => void;
 };
 
 declare type CheckboxInputProps = {
@@ -157,6 +168,7 @@ declare type CustomButtonProps = {
   bgColor: string;
   textColor?: string;
   onClick?: () => void;
+  width?: string;
 };
 
 declare type ColumnFilter = {

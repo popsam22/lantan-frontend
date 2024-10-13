@@ -260,53 +260,55 @@ const ViewCustomer = () => {
             />
           </div>
         </div>
-        <div className="flex mt-3 w-full mb-10">
+        <div className="flex mt-3 w-full mb-10 border-b border-gray-200">
           <img
             src={avatar}
             alt="avatar"
             width={60}
             height={60}
-            className="object-contain mr-5"
+            className="object-contain mr-5 flex-shrink-0"
           />
-          <div className="grid grid-cols-4 w-full">
-            <div>
-              <h1 className="text-[#475467] text-sm">Full Name</h1>
-              <p className="text-[#2E2E2E] font-medium mb-7">{fullName}</p>
-            </div>
-            <div>
-              <h1 className="text-[#475467] text-sm">Phone Number</h1>
-              <p className="text-[#2E2E2E] font-medium">{phoneNumber}</p>
-            </div>
-            <div>
-              <h1 className="text-[#475467] text-sm">Email Address</h1>
-              <p className="text-[#2E2E2E] font-medium">{emailAddress}</p>
-            </div>
-            <div className="">
-              <h1 className="text-[#475467] text-sm">Verification Status</h1>
-              <p
-                className={clsx(
-                  "rounded-2xl font-medium whitespace-nowrap text-sm",
-                  verificationStatus === "Verified"
-                    ? "text-[#14AE5C] bg-[#ECFDF3] w-[77px] py-0.5 px-2"
-                    : "text-[#206AB2] w-[150px] cursor-pointer"
-                )}
-              >
-                {verificationStatus === "Verified"
-                  ? verificationStatus
-                  : "Approve Verification"}
-              </p>
-            </div>
-            <div>
-              <h1 className="text-[#475467] text-sm">Wallet Balance (N)</h1>
-              <p className="text-[#2E2E2E] font-medium">{walletBalance}</p>
-            </div>
-            <div>
-              <h1 className="text-[#475467] text-sm">Date Joined</h1>
-              <p className="text-[#2E2E2E] font-medium">{dateJoined}</p>
-            </div>
-            <div>
-              <h1 className="text-[#475467] text-sm">Date of Birth</h1>
-              <p className="text-[#2E2E2E] font-medium">12/08/24</p>
+          <div className="flex-grow mb-7">
+            <div className="grid grid-cols-4 gap-6 w-full">
+              <div>
+                <h1 className="text-[#475467] text-sm">Full Name</h1>
+                <p className="text-[#2E2E2E] font-medium">{fullName}</p>
+              </div>
+              <div>
+                <h1 className="text-[#475467] text-sm">Phone Number</h1>
+                <p className="text-[#2E2E2E] font-medium">{phoneNumber}</p>
+              </div>
+              <div>
+                <h1 className="text-[#475467] text-sm">Email Address</h1>
+                <p className="text-[#2E2E2E] font-medium">{emailAddress}</p>
+              </div>
+              <div>
+                <h1 className="text-[#475467] text-sm">Verification Status</h1>
+                <p
+                  className={clsx(
+                    "rounded-2xl font-medium whitespace-nowrap text-sm",
+                    verificationStatus === "Verified"
+                      ? "text-[#14AE5C] bg-[#ECFDF3] w-[77px] py-0.5 px-2"
+                      : "text-[#206AB2] w-[150px] cursor-pointer"
+                  )}
+                >
+                  {verificationStatus === "Verified"
+                    ? verificationStatus
+                    : "Approve Verification"}
+                </p>
+              </div>
+              <div>
+                <h1 className="text-[#475467] text-sm">Wallet Balance (N)</h1>
+                <p className="text-[#2E2E2E] font-medium">{walletBalance}</p>
+              </div>
+              <div>
+                <h1 className="text-[#475467] text-sm">Date Joined</h1>
+                <p className="text-[#2E2E2E] font-medium">{dateJoined}</p>
+              </div>
+              <div>
+                <h1 className="text-[#475467] text-sm">Date of Birth</h1>
+                <p className="text-[#2E2E2E] font-medium">12/08/24</p>
+              </div>
             </div>
           </div>
         </div>

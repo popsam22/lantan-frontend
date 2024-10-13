@@ -162,10 +162,24 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
         </div>
       </div>
       <div className="px-3">
-        <div className="flex gap-4 pl-2 items-center">
-          <img src={settings} alt="settings" width={20} height={20} />
-          <p className="text-xs text-[#7A7A7A]">Settings</p>
-        </div>
+        <Link to="/admin/settings">
+          <div
+            className={clsx(
+              "flex gap-4 pl-2 items-center rounded",
+              select === "Settings" && "bg-[#FAFCFF]"
+            )}
+            onClick={() => handleClick("Settings")}
+          >
+            <img
+              src={settings}
+              alt="settings"
+              width={20}
+              height={20}
+              className="object-contain"
+            />
+            <p className="text-xs text-[#7A7A7A]">Settings</p>
+          </div>
+        </Link>
         <div className="border-b-2 border-[#EAECF0] mt-8" />
         <div className="flex w-[32px] mt-3">
           <img src={avatar} alt="ope" className="object-contain pr-1" />
