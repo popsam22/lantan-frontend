@@ -11,12 +11,14 @@ import { toast } from "react-toastify";
 import show from "@/assets/Show.svg";
 import cloud from "@/assets/download-cloud-line.svg";
 import blue_cloud from "@/assets/download-cloud-line 2.svg";
+import password from "@/assets/password.png";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import date from "@/assets/time-line.svg";
 import dropdown from "@/assets/arrow-down-s-line.svg";
 import flag from "@/assets/flag-line.svg";
 import search from "@/assets/search.svg";
+import success from "@/assets/Featured icon.svg";
 import Tanstack from "@/components/Tanstack";
 import { customerTransactionHistory } from "@/constants/customers";
 import clsx from "clsx";
@@ -25,6 +27,8 @@ import LantanModal from "@/components/Modal";
 const ViewCustomer = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [openNewPassword, setOpenNewPassword] = useState(false);
+  const [resetSuccess, setResetSuccess] = useState(false);
   const [selectedItem, setSelectedItem] = useState<SelectedItem | null>(null);
   const [columnFilters, setColumnFilters] = useState<ColumnFilter[]>([]);
   const location = useLocation();
@@ -244,6 +248,95 @@ const ViewCustomer = () => {
         }
         className={"max-w-[850px]"}
       />
+      <LantanModal
+        title="Set New Password"
+        open={openNewPassword}
+        onClose={() => setOpenNewPassword(false)}
+        className="max-w-[538px]"
+        children={
+          <div>
+            <label
+              htmlFor="new password"
+              className="text-sm text-[#3D3D3D] mb-2 mt-4 flex"
+            >
+              Enter New Password
+            </label>
+            <div className="flex border p-3 rounded-lg justify-between mb-5">
+              <input
+                type="password"
+                placeholder="Enter your password"
+                className="flex flex-1 outline-none text-sm text-[#1F1F1F bg-inherit placeholder:text-[#A3A3A3] placeholder:font-light"
+              />
+              <img
+                src={password}
+                alt="password"
+                width={24}
+                height={24}
+                className="hover:cursor-pointer ml-2.5"
+              />
+            </div>
+            <label
+              htmlFor="confirm password"
+              className="text-sm text-[#3D3D3D] mb-2 mt-4 flex"
+            >
+              Confirm New Password
+            </label>
+            <div className="flex border p-3 rounded-lg justify-between mb-5">
+              <input
+                type="password"
+                placeholder="Confirm your password"
+                className="flex flex-1 outline-none text-sm text-[#1F1F1F bg-inherit placeholder:text-[#A3A3A3] placeholder:font-light"
+              />
+              <img
+                src={password}
+                alt="password"
+                width={24}
+                height={24}
+                className="hover:cursor-pointer ml-2.5"
+              />
+            </div>
+            <div className="flex gap-3">
+              <CustomButton
+                label="Reset Password"
+                bgColor="#075AAA"
+                onClick={() => {
+                  setResetSuccess(true);
+                  setOpenNewPassword(false);
+                }}
+              />
+              <CustomButton
+                label="Cancel"
+                bgColor="#F1F6FE"
+                textColor="#206AB2"
+                onClick={() => setOpenNewPassword(false)}
+              />
+            </div>
+          </div>
+        }
+      />
+      <LantanModal
+        title=""
+        open={resetSuccess}
+        onClose={() => setResetSuccess(false)}
+        className="max-w-[538px]"
+        children={
+          <div className="flex flex-col items-center mb-3">
+            <img
+              src={success}
+              alt="success"
+              width={120}
+              height={120}
+              className="object-contain mb-5"
+            />
+            <h1 className="text-[#1F1F1F] text-2xl font-medium mb-3 whitespace-nowrap">
+              Password Reset Successfully
+            </h1>
+            <p className="text-[#5C5C5C] text-xs font-light whitespace-nowrap">
+              Customer's new password is '12345'
+            </p>
+          </div>
+        }
+      />
       <div className="rounded-lg border p-3">
         <div className="flex justify-between items-center">
           <p className="text-[#5C5C5C] text-sm">Personal Information</p>
@@ -257,6 +350,7 @@ const ViewCustomer = () => {
               label="Reset Password"
               bgColor="#F1F6FE"
               textColor="#206AB2"
+              onClick={() => setOpenNewPassword(true)}
             />
           </div>
         </div>
