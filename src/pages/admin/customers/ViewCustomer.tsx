@@ -12,6 +12,7 @@ import show from "@/assets/Show.svg";
 import cloud from "@/assets/download-cloud-line.svg";
 import blue_cloud from "@/assets/download-cloud-line 2.svg";
 import password from "@/assets/password.png";
+import camera from "@/assets/avatar-icon.png";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import date from "@/assets/time-line.svg";
@@ -354,16 +355,25 @@ const ViewCustomer = () => {
             />
           </div>
         </div>
-        <div className="flex mt-3 w-full mb-10 border-b border-gray-200">
-          <img
-            src={avatar}
-            alt="avatar"
-            width={60}
-            height={60}
-            className="object-contain mr-5 flex-shrink-0"
-          />
-          <div className="flex-grow mb-7">
-            <div className="grid grid-cols-4 gap-6 w-full">
+        <div className="flex mt-3 w-full mb-8 border-b border-gray-200">
+          <div className="relative">
+            <img
+              src={avatar}
+              alt="avatar"
+              width={100}
+              height={100}
+              className="object-contain mr-7"
+            />
+            <img
+              src={camera}
+              alt="photo"
+              width={24}
+              height={24}
+              className="object-contain absolute top-10 left-10"
+            />
+          </div>
+          <div className="flex-1 mb-7">
+            <div className="grid grid-cols-4 gap-6 w-full items-center px-3">
               <div>
                 <h1 className="text-[#475467] text-sm">Full Name</h1>
                 <p className="text-[#2E2E2E] font-medium">{fullName}</p>
@@ -407,7 +417,7 @@ const ViewCustomer = () => {
           </div>
         </div>
         <div className="mt-4 flex">
-          <div className="w-1/2">
+          <div className="w-1/2 pr-3 border-r">
             <p className="text-[#5C5C5C] text-sm mb-4">Other Information</p>
             <div className="grid grid-cols-3">
               <div>
@@ -428,7 +438,7 @@ const ViewCustomer = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 pl-4">
             <p className="text-[#5C5C5C] text-sm mb-4">Payment Information</p>
             <div className="grid grid-cols-3">
               <div>
