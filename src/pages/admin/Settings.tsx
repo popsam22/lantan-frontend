@@ -76,7 +76,7 @@ const Settings = () => {
         <div className="flex gap-5 items-center mb-2">
           <p
             className={clsx(
-              "text-sm whitespace-nowrap",
+              "text-sm whitespace-nowrap cursor-pointer",
               activeTab === 0
                 ? "text-[#075AAA] border-b-2 border-[#075AAA] font-semibold"
                 : "text-[#5C5C5C]"
@@ -87,7 +87,7 @@ const Settings = () => {
           </p>
           <p
             className={clsx(
-              "text-sm whitespace-nowrap",
+              "text-sm whitespace-nowrap cursor-pointer",
               activeTab === 1
                 ? "text-[#075AAA] border-b-2 border-[#075AAA] font-semibold"
                 : "text-[#5C5C5C]"
@@ -98,7 +98,7 @@ const Settings = () => {
           </p>
           <p
             className={clsx(
-              "text-sm",
+              "text-sm whitespace-nowrap cursor-pointer",
               activeTab === 2
                 ? "text-[#075AAA] border-b-2 border-[#075AAA] font-semibold"
                 : "text-[#5C5C5C]"
