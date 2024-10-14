@@ -507,7 +507,7 @@ const Settings = () => {
                   className="object-contain mb-4"
                 />
                 <h1 className="text-[#1F1F1F] text-2xl font-medium mb-2">
-                  Account Created Successfully
+                  Account Updated Successfully
                 </h1>
               </div>
             }

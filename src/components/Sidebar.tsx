@@ -1,4 +1,4 @@
-import latana from "../assets/Vectorlatana.png";
+import lantan from "../assets/Logo.svg";
 import logout from "../assets/Iconlogout.png";
 import overview from "../assets/bar-chart-2overview.png";
 import property from "../assets/Apartment_Home_Icon_UIA.png";
@@ -23,8 +23,8 @@ const Sidebar = ({ setItem, select }: SidebarProp) => {
       <div className="w-[200px] flex flex-col justify-between m-3 pb-5">
         <div className="px-3 pb-20">
           <img
-            src={latana}
-            alt="latana logo"
+            src={lantan}
+            alt="lantan logo"
             width={40}
             height={40}
             className="object-contain"
